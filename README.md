@@ -57,7 +57,7 @@ The emphasis here is on team collaboration, so the points awarded will be based 
 - Create **UI Wireframes**
     - Create UI wireframes for each of the screen in your team’s solution
     - Sign up
-    ![image](https://github.com/gopinathsjsu/starbucks-joycechen2014/blob/master/Class%20Diagram_addcard.png)
+    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/WechatIMG78.jpeg)
 
 - Create an Overall **Architecture Diagram (this does not have to be in UML) **showing:  
 
