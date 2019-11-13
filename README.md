@@ -1,6 +1,6 @@
 # team-project-newteam
 team-project-newteam created by GitHub Classroom
-### **Team Portion (50 Points + 20 Points Extra Credit)**
+### 
 
 **Use Case:**
 
@@ -15,19 +15,15 @@ The emphasis here is on team collaboration, so the points awarded will be based 
     - APIs can be demonstrated using a basic Web/mobile UI or through Postman
     - UI will be used by Customers and Bankers (Admins)
     - APIs should support following functionality:
+        - register for new user
         - Adding new accounts - Checking, Savings
         - Closing existing accounts
         - Transfer between accounts - one time or recurring
         - Set up recurring or one-time Bill payment for external payees
         - View and search Transactions - for credits/debits/checks/fees - up to  last 18 months
         - (Admin only) - Add transactions - such as manual refunds on fees
-
-- **Extra (can be worked on by more than one team member)**:
-- _**NOTE**_: _ Each extra credit option below is worth **10 points each. Pick max of 2 **_  
-
-    - Deploy API to **AWS in an Auto Scaled EC2 Cluster** with Load Balancer
-    - Deploy API to AWS as Docker Containers in **Amazon Containers or EKS**
-    - Web or mobile UI
+        - Deploy API to **AWS in an Auto Scaled EC2 Cluster** with Load Balancer
+        - Web or mobile UI
 
   
 **Individual Requirements**
@@ -60,7 +56,8 @@ The emphasis here is on team collaboration, so the points awarded will be based 
 - Maintain a **Scrum Task Board (using GitHub Project Board)**
 - Create **UI Wireframes**
     - Create UI wireframes for each of the screen in your team’s solution
-    - (this can be done by hand or electronically with a tool like “Pencil”)
+    - Sign up
+    ![image](https://github.com/gopinathsjsu/starbucks-joycechen2014/blob/master/Class%20Diagram_addcard.png)
 
 - Create an Overall **Architecture Diagram (this does not have to be in UML) **showing:  
 
