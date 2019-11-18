@@ -38,7 +38,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       "/error/**/*",
       "/console/**",
       "/signup",
-      "/recurring/transfer/trigger"
+      "/swagger-resources/**",
+      "/swagger-ui.html",
+      "/v2/api-docs",
+      "/webjars/**"
   };
   @Autowired
   private UserSecurityService userSecurityService;

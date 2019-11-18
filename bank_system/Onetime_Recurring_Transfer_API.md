@@ -32,3 +32,6 @@
 -  test method 
 `POST`
 - test url `localhost:8080/recurring/transfer/start`
+
+# Swagger
+`http://localhost:8080/swagger-ui.html#/`

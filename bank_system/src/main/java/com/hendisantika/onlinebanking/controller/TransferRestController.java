@@ -9,6 +9,8 @@ import com.hendisantika.onlinebanking.entity.User;
 import com.hendisantika.onlinebanking.service.SchedulerService;
 import com.hendisantika.onlinebanking.service.TransactionService;
 import com.hendisantika.onlinebanking.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import java.security.Principal;
 import org.quartz.SchedulerException;
 import org.slf4j.Logger;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@Api(tags = "Transfer", description = "Onetime/Recurring Transfer API")
 @RestController
 public class TransferRestController {
 
@@ -35,7 +38,7 @@ public class TransferRestController {
 
   private final String jobClassLiteral = "com.hendisantika.onlinebanking.job.RecurringTransferMoneyJob";
 
-
+  @ApiOperation("start recurring transfer api")
   @PostMapping(value = "/recurring/transfer/start")
   public Result triggerRecurringJob(@RequestBody TransferMoneyDTO payload, Principal principal) {
 
@@ -57,6 +60,7 @@ public class TransferRestController {
     return Result.ok();
   }
 
+  @ApiOperation("start onetime transfer api")
   @PostMapping(value = "/onetime/transfer/start")
   public Result triggerOneTimeJob(@RequestBody TransferMoneyDTO payload, Principal principal) {
 
@@ -71,6 +75,7 @@ public class TransferRestController {
     return Result.ok();
   }
 
+  @ApiOperation("shutdown recurring transfer api")
   @GetMapping("/recurring/transfer/shutdown")
   public Result shutdown() {
     try {
