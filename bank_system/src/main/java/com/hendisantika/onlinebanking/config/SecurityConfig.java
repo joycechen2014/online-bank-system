@@ -37,7 +37,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       "/contact/**",
       "/error/**/*",
       "/console/**",
-      "/signup"
+      "/signup",
+      "/recurring/transfer/trigger"
   };
   @Autowired
   private UserSecurityService userSecurityService;
@@ -69,7 +70,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Autowired
   public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//    	 auth.inMemoryAuthentication().withUser("user").password("password").roles("USER"); //This is in-memory authentication
+//    	 auth.inMemoryAuthentication().withUser("user").password("password").roles("ADMIN"); //This is in-memory authentication
     auth.userDetailsService(userSecurityService).passwordEncoder(passwordEncoder());
   }
 
