@@ -33,11 +33,12 @@ public class RecurringTransferMoneyJob implements Job {
       TransferMoneyDTO payload = (TransferMoneyDTO) schedulerContext.get("payload");
       Principal principal = (Principal) schedulerContext.get("principal");
 
-      String recipientName = payload.getRecipientName();
+//      String recipientName = payload.getRecipientName();
+      String accountNumber = payload.getAccountNumber();
       String accountType = payload.getAccountType();
       String amount = payload.getAmount();
       User user = userService.findByUsername(principal.getName());
-      Recipient recipient = transactionService.findRecipientByName(recipientName);
+      Recipient recipient = transactionService.findRecipientByAccountNumber(accountNumber);
       logger.info("recurring transfer money from " + user.getUsername() + " to " + recipient.getName());
       transactionService
           .toSomeoneElseTransfer(recipient, accountType, amount, user.getPrimaryAccount(),

@@ -7,8 +7,18 @@ public class TransferMoneyDTO {
   private String amount;
 
   private String cron;
+  private String accountNumber;
+
 
   public TransferMoneyDTO() {
+  }
+
+  public String getAccountNumber() {
+    return accountNumber;
+  }
+
+  public void setAccountNumber(String accountNumber) {
+    this.accountNumber = accountNumber;
   }
 
   public String getRecipientName() {

@@ -35,6 +35,7 @@ public interface TransactionService {
   Recipient saveRecipient(Recipient recipient);
 
   Recipient findRecipientByName(String recipientName);
+  Recipient findRecipientByAccountNumber(String accountNumber);
 
   void deleteRecipientByName(String recipientName);
 

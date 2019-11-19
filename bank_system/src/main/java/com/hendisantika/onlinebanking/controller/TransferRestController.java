@@ -64,7 +64,9 @@ public class TransferRestController {
   @PostMapping(value = "/onetime/transfer/start")
   public Result triggerOneTimeJob(@RequestBody TransferMoneyDTO payload, Principal principal) {
 
-    Recipient recipient = transactionService.findRecipientByName(payload.getRecipientName());
+//    Recipient recipient = transactionService.findRecipientByName(payload.getRecipientName());
+    Recipient recipient = transactionService.findRecipientByAccountNumber(payload.getAccountNumber());
+
     User user = userService.findByUsername(principal.getName());
 
     transactionService

@@ -14,6 +14,7 @@ public interface RecipientDao extends CrudRepository<Recipient, Long> {
   List<Recipient> findAll();
 
   Recipient findByName(String recipientName);
+  Recipient findByAccountNumber(String accountNumber);
 
   void deleteByName(String recipientName);
 }
