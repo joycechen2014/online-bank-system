@@ -6,6 +6,7 @@ import com.hendisantika.onlinebanking.entity.Recipient;
 import com.hendisantika.onlinebanking.entity.Result;
 import com.hendisantika.onlinebanking.entity.TransferMoneyDTO;
 import com.hendisantika.onlinebanking.entity.User;
+import com.hendisantika.onlinebanking.exception.InsufficientBalanceException;
 import com.hendisantika.onlinebanking.service.SchedulerService;
 import com.hendisantika.onlinebanking.service.TransactionService;
 import com.hendisantika.onlinebanking.service.UserService;
@@ -16,6 +17,7 @@ import org.quartz.SchedulerException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -54,8 +56,6 @@ public class TransferRestController {
       logger.error("Create recurring job encounter error");
       e.printStackTrace();
       return Result.error(ApiResultEnum.CREATING_RECURRING_JOB_ERROR);
-
-
     }
     return Result.ok();
   }
@@ -65,14 +65,20 @@ public class TransferRestController {
   public Result triggerOneTimeJob(@RequestBody TransferMoneyDTO payload, Principal principal) {
 
 //    Recipient recipient = transactionService.findRecipientByName(payload.getRecipientName());
-    Recipient recipient = transactionService.findRecipientByAccountNumber(payload.getAccountNumber());
+    Recipient recipient = transactionService
+        .findRecipientByAccountNumber(payload.getAccountNumber());
 
     User user = userService.findByUsername(principal.getName());
 
-    transactionService
-        .toSomeoneElseTransfer(recipient, payload.getAccountType(), payload.getAmount(),
-            user.getPrimaryAccount(),
-            user.getSavingsAccount());
+    try {
+      transactionService
+          .toSomeoneElseTransfer(recipient, payload.getAccountType(), payload.getAmount(),
+              user.getPrimaryAccount(),
+              user.getSavingsAccount());
+    } catch (InsufficientBalanceException e) {
+      e.printStackTrace();
+      return Result.error(ApiResultEnum.INSUFFICIENT_BALANCE_ERROR);
+    }
 
     return Result.ok();
   }

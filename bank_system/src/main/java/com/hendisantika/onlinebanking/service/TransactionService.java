@@ -5,6 +5,7 @@ import com.hendisantika.onlinebanking.entity.PrimaryTransaction;
 import com.hendisantika.onlinebanking.entity.Recipient;
 import com.hendisantika.onlinebanking.entity.SavingsAccount;
 import com.hendisantika.onlinebanking.entity.SavingsTransaction;
+import com.hendisantika.onlinebanking.exception.InsufficientBalanceException;
 import java.security.Principal;
 import java.util.List;
 
@@ -40,5 +41,5 @@ public interface TransactionService {
   void deleteRecipientByName(String recipientName);
 
   void toSomeoneElseTransfer(Recipient recipient, String accountType, String amount,
-      PrimaryAccount primaryAccount, SavingsAccount savingsAccount);
+      PrimaryAccount primaryAccount, SavingsAccount savingsAccount) throws InsufficientBalanceException;
 }

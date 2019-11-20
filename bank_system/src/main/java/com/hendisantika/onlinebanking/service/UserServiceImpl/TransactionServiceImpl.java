@@ -6,6 +6,7 @@ import com.hendisantika.onlinebanking.entity.Recipient;
 import com.hendisantika.onlinebanking.entity.SavingsAccount;
 import com.hendisantika.onlinebanking.entity.SavingsTransaction;
 import com.hendisantika.onlinebanking.entity.User;
+import com.hendisantika.onlinebanking.exception.InsufficientBalanceException;
 import com.hendisantika.onlinebanking.repository.PrimaryAccountDao;
 import com.hendisantika.onlinebanking.repository.PrimaryTransactionDao;
 import com.hendisantika.onlinebanking.repository.RecipientDao;
@@ -144,29 +145,48 @@ public class TransactionServiceImpl implements TransactionService {
   }
 
   public void toSomeoneElseTransfer(Recipient recipient, String accountType, String amount,
-      PrimaryAccount primaryAccount, SavingsAccount savingsAccount) {
-    if (accountType.equalsIgnoreCase("Primary")) {
-      primaryAccount
-          .setAccountBalance(primaryAccount.getAccountBalance().subtract(new BigDecimal(amount)));
-      primaryAccountDao.save(primaryAccount);
+      PrimaryAccount primaryAccount, SavingsAccount savingsAccount)
+      throws InsufficientBalanceException {
 
-      Date date = new Date();
+      if (accountType.equalsIgnoreCase("Primary")) {
 
-      PrimaryTransaction primaryTransaction = new PrimaryTransaction(date,
-          "Transfer to recipient " + recipient.getName(), "Transfer", "Finished",
-          Double.parseDouble(amount), primaryAccount.getAccountBalance(), primaryAccount);
-      primaryTransactionDao.save(primaryTransaction);
-    } else if (accountType.equalsIgnoreCase("Savings")) {
-      savingsAccount
-          .setAccountBalance(savingsAccount.getAccountBalance().subtract(new BigDecimal(amount)));
-      savingsAccountDao.save(savingsAccount);
+        BigDecimal subtractResult = primaryAccount.getAccountBalance()
+            .subtract(new BigDecimal(amount));
 
-      Date date = new Date();
+        if (subtractResult.compareTo(BigDecimal.ZERO) != -1) {
+          primaryAccount
+              .setAccountBalance(subtractResult);
+          primaryAccountDao.save(primaryAccount);
+          Date date = new Date();
 
-      SavingsTransaction savingsTransaction = new SavingsTransaction(date,
-          "Transfer to recipient " + recipient.getName(), "Transfer", "Finished",
-          Double.parseDouble(amount), savingsAccount.getAccountBalance(), savingsAccount);
-      savingsTransactionDao.save(savingsTransaction);
-    }
+          PrimaryTransaction primaryTransaction = new PrimaryTransaction(date,
+              "Transfer to recipient " + recipient.getName(), "Transfer", "Finished",
+              Double.parseDouble(amount), primaryAccount.getAccountBalance(), primaryAccount);
+          primaryTransactionDao.save(primaryTransaction);
+        } else {
+          throw new InsufficientBalanceException("Insufficient Balance!");
+        }
+
+
+      } else if (accountType.equalsIgnoreCase("Savings")) {
+        BigDecimal subtractResult = primaryAccount.getAccountBalance()
+            .subtract(new BigDecimal(amount));
+
+        if (subtractResult.compareTo(BigDecimal.ZERO) != -1) {
+          savingsAccount
+              .setAccountBalance(
+                  savingsAccount.getAccountBalance().subtract(new BigDecimal(amount)));
+          savingsAccountDao.save(savingsAccount);
+
+          Date date = new Date();
+
+          SavingsTransaction savingsTransaction = new SavingsTransaction(date,
+              "Transfer to recipient " + recipient.getName(), "Transfer", "Finished",
+              Double.parseDouble(amount), savingsAccount.getAccountBalance(), savingsAccount);
+          savingsTransactionDao.save(savingsTransaction);
+        } else {
+          throw new InsufficientBalanceException("Insufficient Balance!");
+        }
+      }
   }
 }
