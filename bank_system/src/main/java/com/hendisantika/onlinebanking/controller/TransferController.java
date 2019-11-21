@@ -1,9 +1,12 @@
 package com.hendisantika.onlinebanking.controller;
 
+import com.hendisantika.onlinebanking.entity.ApiResultEnum;
 import com.hendisantika.onlinebanking.entity.PrimaryAccount;
 import com.hendisantika.onlinebanking.entity.Recipient;
+import com.hendisantika.onlinebanking.entity.Result;
 import com.hendisantika.onlinebanking.entity.SavingsAccount;
 import com.hendisantika.onlinebanking.entity.User;
+import com.hendisantika.onlinebanking.exception.InsufficientBalanceException;
 import com.hendisantika.onlinebanking.service.TransactionService;
 import com.hendisantika.onlinebanking.service.UserService;
 import java.security.Principal;
@@ -134,9 +137,14 @@ public class TransferController {
       Principal principal) {
     User user = userService.findByUsername(principal.getName());
     Recipient recipient = transactionService.findRecipientByName(recipientName);
-    transactionService
-        .toSomeoneElseTransfer(recipient, accountType, amount, user.getPrimaryAccount(),
-            user.getSavingsAccount());
+    try {
+      transactionService
+          .toSomeoneElseTransfer(recipient, accountType, amount, user.getPrimaryAccount(),
+              user.getSavingsAccount());
+    } catch (InsufficientBalanceException e) {
+      Result.error(ApiResultEnum.INSUFFICIENT_BALANCE_ERROR);
+      e.printStackTrace();
+    }
 
     return "redirect:/userFront";
   }
