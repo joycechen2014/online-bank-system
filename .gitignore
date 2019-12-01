@@ -1,0 +1,9 @@
+.idea/
+bank_system/.iea
+bank_system/target/
+*.iml
+DS_Store
+log/
+bank_system/log
+
+
