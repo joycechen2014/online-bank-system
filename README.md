@@ -101,3 +101,15 @@ The emphasis here is on team collaboration, so the points awarded will be based 
 _**Example Format for Weekly Stand-up (i.e. Daily Scrum) and Final Burn-down Chart & Task Board:**_
 
 _**[Sample Sprint Review.png]()**_
+
+
+## APIs:
+* View and search Transactions
+    * URL: 
+        * Checking Accounts: localhost:8080/api/primarytransaction/searchresult
+        * Saving Accounts: localhost:8080/api/savingtransaction/searchresult
+    * Before Use: get cookie with logged in status from browser and put it on Postman
+    * Method: GET
+    * Params:
+        * Required: username
+        * Optional: date/type/status/amount
