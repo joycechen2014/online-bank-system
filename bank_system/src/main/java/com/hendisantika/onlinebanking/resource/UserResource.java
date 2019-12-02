@@ -48,7 +48,7 @@ public class UserResource {
     return transactionService.findSavingsTransactionList(username);
   }
 
-  @RequestMapping(value= "/transaction/searchResult", method = RequestMethod.GET)
+  @RequestMapping(value= "/primarytransaction/searchresult", method = RequestMethod.GET)
   public List<PrimaryTransaction> searchPrimaryTransactionList(
           @RequestParam(value="username") String username,
           @RequestParam(value="date", required=false) Date date,
@@ -94,6 +94,54 @@ public class UserResource {
     }
 
             return allPrimaryTransaction;
+  }
+  
+  @RequestMapping(value= "/savingstransaction/searchresult", method = RequestMethod.GET)
+  public List<SavingsTransaction> searchSavingsTransactionList(
+          @RequestParam(value="username") String username,
+          @RequestParam(value="date", required=false) Date date,
+          @RequestParam(value="type", required=false) String type,
+          @RequestParam(value="status", required=false) String status,
+          @RequestParam(value="amount", required=false) Double amount) {
+    List<SavingsTransaction> allSavingsTransaction = transactionService.findSavingsTransactionList(username);
+    if (date != null) {
+      List<SavingsTransaction> savingsTransactions1 = new ArrayList<>();
+      for (SavingsTransaction transaction : allSavingsTransaction) {
+        if (transaction.getDate() == date) {
+          savingsTransactions1.add(transaction);
+        }
+      }
+      allSavingsTransaction = savingsTransactions1;
+    }
+    if (type != null) {
+      List<SavingsTransaction> savingsTransactions2 = new ArrayList<>();
+      for (SavingsTransaction transaction : allSavingsTransaction) {
+        if (transaction.getType().equals(type)) {
+          savingsTransactions2.add(transaction);
+        }
+      }
+      allSavingsTransaction = savingsTransactions2;
+    }
+    if (status != null) {
+      List<SavingsTransaction> savingsTransactions3 = new ArrayList<>();
+      for (SavingsTransaction transaction : allSavingsTransaction) {
+        if (transaction.getStatus().equals(status)) {
+          savingsTransactions3.add(transaction);
+        }
+      }
+      allSavingsTransaction = savingsTransactions3;
+    }
+    if (amount != null) {
+      List<SavingsTransaction> savingsTransactions4 = new ArrayList<>();
+      for (SavingsTransaction transaction : allSavingsTransaction) {
+        if (transaction.getAmount() == amount) {
+          savingsTransactions4.add(transaction);
+        }
+      }
+      allSavingsTransaction = savingsTransactions4;
+    }
+
+    return allSavingsTransaction;
   }
 
   @RequestMapping("/user/{username}/enable")
