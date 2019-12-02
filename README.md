@@ -113,3 +113,26 @@ _**[Sample Sprint Review.png]()**_
     * Params:
         * Required: username
         * Optional: date/type/status/amount
+        
+* Register new user and add Primary Account and Savings Account.
+    * URL: 
+        * Register new user: http://localhost:8080/account/addUser
+
+    Method: POST
+    * Params:
+    ```json
+        {"username" : "test111",
+        "password" : "123456",
+        "firstName" : "yiyo",
+        "lastName" : "chen",
+        "Email" : "yiyo_1234@sjsu.edu",
+        "phone" : "1234445678"
+        }  
+    ```
+*   Add Primary Account and Savings Account. 
+     * URL: 
+       * Add Primary Accounts: http://localhost:8080/account/addPrimaryAcc/{id}
+       * Add Savings Accounts: http://localhost:8080/account/addCheckingAcc/{id}
+       * Method: GET
+        * Params:
+               * Required: User_id
