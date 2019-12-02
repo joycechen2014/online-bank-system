@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 @Service("userDetailsService")
 public interface UserService {
 
+  User findByuserId(Long userId);
   User findByUsername(String username);
 
   User findByEmail(String email);

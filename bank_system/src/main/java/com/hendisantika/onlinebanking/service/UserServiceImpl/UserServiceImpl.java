@@ -42,6 +42,10 @@ public class UserServiceImpl implements UserService {
     userDao.save(user);
   }
 
+  public User findByuserId(Long userId) {
+    return userDao.findByuserId(userId);
+  }
+
   public User findByUsername(String username) {
     return userDao.findByUsername(username);
   }
@@ -66,8 +70,8 @@ public class UserServiceImpl implements UserService {
 
       user.getUserRoles().addAll(userRoles);
 
-      user.setPrimaryAccount(accountService.createPrimaryAccount());
-      user.setSavingsAccount(accountService.createSavingsAccount());
+      //user.setPrimaryAccount(accountService.createPrimaryAccount());
+      //user.setSavingsAccount(accountService.createSavingsAccount());
 
       localUser = userDao.save(user);
     }
