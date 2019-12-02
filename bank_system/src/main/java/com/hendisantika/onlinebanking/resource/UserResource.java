@@ -5,6 +5,8 @@ import com.hendisantika.onlinebanking.entity.SavingsTransaction;
 import com.hendisantika.onlinebanking.entity.User;
 import com.hendisantika.onlinebanking.service.TransactionService;
 import com.hendisantika.onlinebanking.service.UserService;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -21,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api")
-@PreAuthorize("hasRole('ADMIN')")
+//@PreAuthorize("hasRole('ADMIN')")
 public class UserResource {
 
   @Autowired
@@ -34,7 +36,6 @@ public class UserResource {
   public List<User> userList() {
     return userService.findUserList();
   }
-
   @RequestMapping(value = "/user/primary/transaction", method = RequestMethod.GET)
   public List<PrimaryTransaction> getPrimaryTransactionList(
       @RequestParam("username") String username) {
@@ -45,6 +46,54 @@ public class UserResource {
   public List<SavingsTransaction> getSavingsTransactionList(
       @RequestParam("username") String username) {
     return transactionService.findSavingsTransactionList(username);
+  }
+
+  @RequestMapping(value= "/transaction/searchResult", method = RequestMethod.GET)
+  public List<PrimaryTransaction> searchPrimaryTransactionList(
+          @RequestParam(value="username") String username,
+          @RequestParam(value="date", required=false) Date date,
+          @RequestParam(value="type", required=false) String type,
+          @RequestParam(value="status", required=false) String status,
+          @RequestParam(value="amount", required=false) Double amount) {
+    List<PrimaryTransaction> allPrimaryTransaction = transactionService.findPrimaryTransactionList(username);
+    if (date != null) {
+      List<PrimaryTransaction> primaryTransactions1 = new ArrayList<>();
+      for (PrimaryTransaction transaction : allPrimaryTransaction) {
+        if (transaction.getDate() == date) {
+          primaryTransactions1.add(transaction);
+        }
+      }
+      allPrimaryTransaction = primaryTransactions1;
+    }
+    if (type != null) {
+      List<PrimaryTransaction> primaryTransactions2 = new ArrayList<>();
+      for (PrimaryTransaction transaction : allPrimaryTransaction) {
+        if (transaction.getType().equals(type)) {
+          primaryTransactions2.add(transaction);
+        }
+      }
+      allPrimaryTransaction = primaryTransactions2;
+    }
+    if (status != null) {
+      List<PrimaryTransaction> primaryTransactions3 = new ArrayList<>();
+      for (PrimaryTransaction transaction : allPrimaryTransaction) {
+        if (transaction.getStatus().equals(status)) {
+          primaryTransactions3.add(transaction);
+        }
+      }
+      allPrimaryTransaction = primaryTransactions3;
+    }
+    if (amount != null) {
+      List<PrimaryTransaction> primaryTransactions4 = new ArrayList<>();
+      for (PrimaryTransaction transaction : allPrimaryTransaction) {
+        if (transaction.getAmount() == amount) {
+          primaryTransactions4.add(transaction);
+        }
+      }
+      allPrimaryTransaction = primaryTransactions4;
+    }
+
+            return allPrimaryTransaction;
   }
 
   @RequestMapping("/user/{username}/enable")
