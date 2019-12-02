@@ -133,6 +133,6 @@ _**[Sample Sprint Review.png]()**_
      * URL: 
        * Add Primary Accounts: http://localhost:8080/account/addPrimaryAcc/{id}
        * Add Savings Accounts: http://localhost:8080/account/addCheckingAcc/{id}
-       * Method: GET
+       * Method: PUT
         * Params:
                * Required: User_id
