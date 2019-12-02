@@ -107,7 +107,7 @@ _**[Sample Sprint Review.png]()**_
 * View and search Transactions
     * URL: 
         * Checking Accounts: localhost:8080/api/primarytransaction/searchresult
-        * Saving Accounts: localhost:8080/api/savingtransaction/searchresult
+        * Saving Accounts: localhost:8080/api/savingstransaction/searchresult
     * Before Use: get cookie with logged in status from browser and put it on Postman
     * Method: GET
     * Params:
