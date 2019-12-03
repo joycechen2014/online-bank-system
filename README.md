@@ -136,3 +136,13 @@ _**[Sample Sprint Review.png]()**_
        * Method: PUT
         * Params:
                * Required: User_id
+               
+               
+*   Deposit money to saving account or primary account 
+     * URL: 
+       * Add Primary Accounts: http://localhost:8080/api/deposit/{accountType}/{amount}/{receiver}"
+       * Method: PUT
+        * Params:
+               * Required: AccountType (savings or primary)
+               * Required: Amount
+               * Required: Receiver (username)              
