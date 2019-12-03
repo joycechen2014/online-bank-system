@@ -1,0 +1,288 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.hendisantika:online-banking >-------------------
+[INFO] Building online-banking 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.6.1:clean (default-clean) @ online-banking ---
+[INFO] Deleting /Users/jennychen/workspace/team-project-newteam/bank_system/target
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:1.5.22.RELEASE:run (default-cli) > test-compile @ online-banking >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ online-banking ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 47 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ online-banking ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 51 source files to /Users/jennychen/workspace/team-project-newteam/bank_system/target/classes
+[WARNING] /Users/jennychen/workspace/team-project-newteam/bank_system/src/main/java/com/hendisantika/onlinebanking/service/SchedulerService.java: /Users/jennychen/workspace/team-project-newteam/bank_system/src/main/java/com/hendisantika/onlinebanking/service/SchedulerService.java uses unchecked or unsafe operations.
+[WARNING] /Users/jennychen/workspace/team-project-newteam/bank_system/src/main/java/com/hendisantika/onlinebanking/service/SchedulerService.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ online-banking ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/jennychen/workspace/team-project-newteam/bank_system/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ online-banking ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/jennychen/workspace/team-project-newteam/bank_system/target/test-classes
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:1.5.22.RELEASE:run (default-cli) < test-compile @ online-banking <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.5.22.RELEASE:run (default-cli) @ online-banking ---
+                     __  __                            __                            __        __                                                            __
+                    /  |/  |                          /  |                          /  |      /  |                                                          /  |
+  ______   _______  $$ |$$/  _______    ______        $$ |____    ______   _______  $$ |   __ $$/  _______    ______          _______  __    __   _______  _$$ |_     ______   _____  ____
+ /      \ /       \ $$ |/  |/       \  /      \       $$      \  /      \ /       \ $$ |  /  |/  |/       \  /      \        /       |/  |  /  | /       |/ $$   |   /      \ /     \/    \
+/$$$$$$  |$$$$$$$  |$$ |$$ |$$$$$$$  |/$$$$$$  |      $$$$$$$  | $$$$$$  |$$$$$$$  |$$ |_/$$/ $$ |$$$$$$$  |/$$$$$$  |      /$$$$$$$/ $$ |  $$ |/$$$$$$$/ $$$$$$/   /$$$$$$  |$$$$$$ $$$$  |
+$$ |  $$ |$$ |  $$ |$$ |$$ |$$ |  $$ |$$    $$ |      $$ |  $$ | /    $$ |$$ |  $$ |$$   $$<  $$ |$$ |  $$ |$$ |  $$ |      $$      \ $$ |  $$ |$$      \   $$ | __ $$    $$ |$$ | $$ | $$ |
+$$ \__$$ |$$ |  $$ |$$ |$$ |$$ |  $$ |$$$$$$$$/       $$ |__$$ |/$$$$$$$ |$$ |  $$ |$$$$$$  \ $$ |$$ |  $$ |$$ \__$$ |       $$$$$$  |$$ \__$$ | $$$$$$  |  $$ |/  |$$$$$$$$/ $$ | $$ | $$ |
+$$    $$/ $$ |  $$ |$$ |$$ |$$ |  $$ |$$       |      $$    $$/ $$    $$ |$$ |  $$ |$$ | $$  |$$ |$$ |  $$ |$$    $$ |      /     $$/ $$    $$ |/     $$/   $$  $$/ $$       |$$ | $$ | $$ |
+ $$$$$$/  $$/   $$/ $$/ $$/ $$/   $$/  $$$$$$$/       $$$$$$$/   $$$$$$$/ $$/   $$/ $$/   $$/ $$/ $$/   $$/  $$$$$$$ |      $$$$$$$/   $$$$$$$ |$$$$$$$/     $$$$/   $$$$$$$/ $$/  $$/  $$/
+                                                                                                            /  \__$$ |                /  \__$$ |
+                                                                                                            $$    $$/                 $$    $$/
+                                                                                                             $$$$$$/                   $$$$$$/
+2019-12-02 21:56:31.144 [INFO ] org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting OnlineBankingApplication on Jennys-MBP with PID 14710 (/Users/jennychen/workspace/team-project-newteam/bank_system/target/classes started by jennychen in /Users/jennychen/workspace/team-project-newteam/bank_system)
+2019-12-02 21:56:31.147 [INFO ] org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:574) - The following profiles are active: dev
+2019-12-02 21:56:31.404 [INFO ] org.hibernate.validator.internal.util.Version.<clinit>(Version.java:30) - HV000001: Hibernate Validator 5.3.6.Final
+2019-12-02 21:56:31.409 [INFO ] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:583) - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@aa46cb2: startup date [Mon Dec 02 21:56:31 PST 2019]; root of context hierarchy
+2019-12-02 21:56:32.718 [INFO ] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155) - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-12-02 21:56:32.878 [INFO ] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:327) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3a5d6c2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 21:56:32.987 [INFO ] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:327) - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$9c539efc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 21:56:33.000 [INFO ] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:327) - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 21:56:33.002 [INFO ] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:327) - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@640199cb' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 21:56:33.006 [INFO ] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:327) - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$c12841ae] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 21:56:33.018 [INFO ] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:327) - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 21:56:33.401 [INFO ] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.initialize(TomcatEmbeddedServletContainer.java:91) - Tomcat initialized with port(s): 8080 (http)
+2019-12-02 21:56:33.418 [INFO ] org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:180) - Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-02 21:56:33.437 [INFO ] org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:180) - Starting service [Tomcat]
+2019-12-02 21:56:33.438 [INFO ] org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:180) - Starting Servlet Engine: Apache Tomcat/8.5.43
+2019-12-02 21:56:33.535 [INFO ] org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:180) - Initializing Spring embedded WebApplicationContext
+2019-12-02 21:56:33.536 [INFO ] org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.prepareEmbeddedWebApplicationContext(EmbeddedWebApplicationContext.java:271) - Root WebApplicationContext: initialization completed in 2133 ms
+2019-12-02 21:56:33.782 [INFO ] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean.configure(AbstractFilterRegistrationBean.java:251) - Mapping filter: 'requestFilter' to: [/*]
+2019-12-02 21:56:33.782 [INFO ] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean.configure(AbstractFilterRegistrationBean.java:251) - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-12-02 21:56:33.782 [INFO ] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean.configure(AbstractFilterRegistrationBean.java:251) - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-12-02 21:56:33.782 [INFO ] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean.configure(AbstractFilterRegistrationBean.java:251) - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-12-02 21:56:33.783 [INFO ] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean.configure(AbstractFilterRegistrationBean.java:251) - Mapping filter: 'requestContextFilter' to: [/*]
+2019-12-02 21:56:33.784 [INFO ] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean.configure(AbstractFilterRegistrationBean.java:251) - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-12-02 21:56:33.784 [INFO ] org.springframework.boot.web.servlet.ServletRegistrationBean.onStartup(ServletRegistrationBean.java:190) - Mapping servlet: 'dispatcherServlet' to [/]
+2019-12-02 21:56:34.172 [INFO ] org.flywaydb.core.internal.util.logging.slf4j.Slf4jLog.info(Slf4jLog.java:44) - Flyway 3.2.1 by Boxfuse
+Mon Dec 02 21:56:34 PST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Dec 02 21:56:34 PST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Dec 02 21:56:35 PST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Dec 02 21:56:35 PST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Dec 02 21:56:35 PST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Dec 02 21:56:35 PST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Dec 02 21:56:35 PST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Dec 02 21:56:35 PST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Dec 02 21:56:35 PST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Dec 02 21:56:35 PST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+2019-12-02 21:56:35.275 [INFO ] org.flywaydb.core.internal.util.logging.slf4j.Slf4jLog.info(Slf4jLog.java:44) - Database: jdbc:mysql://localhost:3307/onlinebanking?createDatabaseIfNotExist=true (MySQL 5.7)
+2019-12-02 21:56:35.333 [INFO ] org.flywaydb.core.internal.util.logging.slf4j.Slf4jLog.info(Slf4jLog.java:44) - Validated 1 migration (execution time 00:00.037s)
+2019-12-02 21:56:35.401 [INFO ] org.flywaydb.core.internal.util.logging.slf4j.Slf4jLog.info(Slf4jLog.java:44) - Current version of schema `onlinebanking`: 1
+2019-12-02 21:56:35.404 [INFO ] org.flywaydb.core.internal.util.logging.slf4j.Slf4jLog.info(Slf4jLog.java:44) - Schema `onlinebanking` is up to date. No migration necessary.
+2019-12-02 21:56:35.530 [INFO ] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:356) - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-12-02 21:56:35.625 [INFO ] org.hibernate.Version.logVersion(Version.java:37) - HHH000412: Hibernate Core {5.0.12.Final}
+2019-12-02 21:56:35.626 [INFO ] org.hibernate.cfg.Environment.<clinit>(Environment.java:213) - HHH000206: hibernate.properties not found
+2019-12-02 21:56:35.627 [INFO ] org.hibernate.cfg.Environment.buildBytecodeProvider(Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2019-12-02 21:56:35.664 [INFO ] org.hibernate.annotations.common.reflection.java.JavaReflectionManager.<clinit>(JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-12-02 21:56:35.789 [INFO ] org.hibernate.dialect.Dialect.<init>(Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-12-02 21:56:36.387 [INFO ] org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:69) - HHH000229: Running schema validator
+2019-12-02 21:56:36.705 [INFO ] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:414) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-12-02 21:56:36.723 [INFO ] com.hendisantika.onlinebanking.config.QrtzScheduler.init(QrtzScheduler.java:38) - Hello world from Quartz...
+2019-12-02 21:56:37.964 [INFO ] org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1220) - Using default implementation for ThreadExecutor
+2019-12-02 21:56:37.966 [INFO ] org.quartz.simpl.SimpleThreadPool.initialize(SimpleThreadPool.java:268) - Job execution threads will use class loader of thread: main
+2019-12-02 21:56:37.985 [INFO ] org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-12-02 21:56:37.985 [INFO ] org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) - Quartz Scheduler v.2.3.2 created.
+2019-12-02 21:56:37.986 [INFO ] org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) - RAMJobStore initialized.
+2019-12-02 21:56:37.988 [INFO ] org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 2 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2019-12-02 21:56:37.988 [INFO ] org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1374) - Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2019-12-02 21:56:37.988 [INFO ] org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1378) - Quartz scheduler version: 2.3.2
+2019-12-02 21:56:37.989 [INFO ] org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2293) - JobFactory set to: com.hendisantika.onlinebanking.config.AutoWiringSpringBeanJobFactory@13ec70c9
+2019-12-02 21:56:38.398 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/api/addUser],methods=[POST]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.AccountApiController.create(java.util.Map<java.lang.String, java.lang.String>)
+2019-12-02 21:56:38.399 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/api/addPrimaryAcc/{id}],methods=[PUT]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.AccountApiController.addPrimaryAcc(java.lang.Long)
+2019-12-02 21:56:38.400 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/api/get/{id}],methods=[GET]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.AccountApiController.getAccount(java.lang.String)
+2019-12-02 21:56:38.400 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/api/addCheckingAcc/{id}],methods=[PUT]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.AccountApiController.addCheckingAcc(java.lang.String)
+2019-12-02 21:56:38.402 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/account/deposit],methods=[GET]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.AccountController.deposit(org.springframework.ui.Model)
+2019-12-02 21:56:38.402 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/account/withdraw],methods=[GET]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.AccountController.withdraw(org.springframework.ui.Model)
+2019-12-02 21:56:38.403 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/account/primaryAccount]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.AccountController.primaryAccount(org.springframework.ui.Model,java.security.Principal)
+2019-12-02 21:56:38.403 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/account/savingsAccount]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.AccountController.savingsAccount(org.springframework.ui.Model,java.security.Principal)
+2019-12-02 21:56:38.404 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/account/deposit],methods=[POST]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.AccountController.depositPOST(java.lang.String,java.lang.String,java.security.Principal)
+2019-12-02 21:56:38.404 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/account/withdraw],methods=[POST]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.AccountController.withdrawPOST(java.lang.String,java.lang.String,java.security.Principal)
+2019-12-02 21:56:38.405 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/admin/refund],methods=[POST]}" onto public com.hendisantika.onlinebanking.entity.Result com.hendisantika.onlinebanking.controller.AdminCanDoRestController.depositPOST(com.hendisantika.onlinebanking.entity.Refund)
+2019-12-02 21:56:38.406 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/appointment/create],methods=[GET]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.AppointmentController.createAppointment(org.springframework.ui.Model)
+2019-12-02 21:56:38.406 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/appointment/create],methods=[POST]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.AppointmentController.createAppointmentPost(com.hendisantika.onlinebanking.entity.Appointment,java.lang.String,org.springframework.ui.Model,java.security.Principal) throws java.text.ParseException
+2019-12-02 21:56:38.407 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/index]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.HomeController.index()
+2019-12-02 21:56:38.407 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.HomeController.home()
+2019-12-02 21:56:38.408 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/signup],methods=[POST]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.HomeController.signupPost(com.hendisantika.onlinebanking.entity.User,org.springframework.ui.Model)
+2019-12-02 21:56:38.408 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/signup],methods=[GET]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.HomeController.signup(org.springframework.ui.Model)
+2019-12-02 21:56:38.408 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/userFront],methods=[GET]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.HomeController.userFront(java.security.Principal,org.springframework.ui.Model)
+2019-12-02 21:56:38.411 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/transfer/betweenAccounts],methods=[POST]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.TransferController.betweenAccountsPost(java.lang.String,java.lang.String,java.lang.String,java.security.Principal) throws java.lang.Exception
+2019-12-02 21:56:38.412 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/transfer/recipient],methods=[GET]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.TransferController.recipient(org.springframework.ui.Model,java.security.Principal)
+2019-12-02 21:56:38.412 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/transfer/betweenAccounts],methods=[GET]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.TransferController.betweenAccounts(org.springframework.ui.Model)
+2019-12-02 21:56:38.413 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/transfer/recipient/save],methods=[POST]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.TransferController.recipientPost(com.hendisantika.onlinebanking.entity.Recipient,java.security.Principal)
+2019-12-02 21:56:38.413 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/transfer/recipient/edit],methods=[GET]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.TransferController.recipientEdit(java.lang.String,org.springframework.ui.Model,java.security.Principal)
+2019-12-02 21:56:38.414 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/transfer/recipient/delete],methods=[GET]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.TransferController.recipientDelete(java.lang.String,org.springframework.ui.Model,java.security.Principal)
+2019-12-02 21:56:38.414 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/transfer/toSomeoneElse],methods=[GET]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.TransferController.toSomeoneElse(org.springframework.ui.Model,java.security.Principal)
+2019-12-02 21:56:38.414 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/transfer/toSomeoneElse],methods=[POST]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.TransferController.toSomeoneElsePost(java.lang.String,java.lang.String,java.lang.String,java.security.Principal)
+2019-12-02 21:56:38.415 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/recurring/transfer/shutdown],methods=[GET]}" onto public com.hendisantika.onlinebanking.entity.Result com.hendisantika.onlinebanking.controller.TransferRestController.shutdown()
+2019-12-02 21:56:38.416 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/recurring/transfer/start],methods=[POST]}" onto public com.hendisantika.onlinebanking.entity.Result com.hendisantika.onlinebanking.controller.TransferRestController.triggerRecurringJob(com.hendisantika.onlinebanking.entity.TransferMoneyDTO,java.security.Principal)
+2019-12-02 21:56:38.416 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/onetime/transfer/start],methods=[POST]}" onto public com.hendisantika.onlinebanking.entity.Result com.hendisantika.onlinebanking.controller.TransferRestController.triggerOneTimeJob(com.hendisantika.onlinebanking.entity.TransferMoneyDTO,java.security.Principal)
+2019-12-02 21:56:38.417 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/user/profile],methods=[GET]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.UserController.profile(java.security.Principal,org.springframework.ui.Model)
+2019-12-02 21:56:38.417 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/user/profile],methods=[POST]}" onto public java.lang.String com.hendisantika.onlinebanking.controller.UserController.profilePost(com.hendisantika.onlinebanking.entity.User,org.springframework.ui.Model)
+2019-12-02 21:56:38.418 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/api/appointment/{id}/confirm]}" onto public void com.hendisantika.onlinebanking.resource.AppointmentResource.confirmAppointment(java.lang.Long)
+2019-12-02 21:56:38.419 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/api/appointment/all]}" onto public java.util.List<com.hendisantika.onlinebanking.entity.Appointment> com.hendisantika.onlinebanking.resource.AppointmentResource.findAppointmentList()
+2019-12-02 21:56:38.420 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/api/user/all],methods=[GET]}" onto public java.util.List<com.hendisantika.onlinebanking.entity.User> com.hendisantika.onlinebanking.resource.UserResource.userList()
+2019-12-02 21:56:38.421 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/api/user/primary/transaction],methods=[GET]}" onto public java.util.List<com.hendisantika.onlinebanking.entity.PrimaryTransaction> com.hendisantika.onlinebanking.resource.UserResource.getPrimaryTransactionList(java.lang.String)
+2019-12-02 21:56:38.421 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/api/user/savings/transaction],methods=[GET]}" onto public java.util.List<com.hendisantika.onlinebanking.entity.SavingsTransaction> com.hendisantika.onlinebanking.resource.UserResource.getSavingsTransactionList(java.lang.String)
+2019-12-02 21:56:38.422 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/api/primarytransaction/searchresult],methods=[GET]}" onto public java.util.List<com.hendisantika.onlinebanking.entity.PrimaryTransaction> com.hendisantika.onlinebanking.resource.UserResource.searchPrimaryTransactionList(java.lang.String,java.util.Date,java.lang.String,java.lang.String,java.lang.Double)
+2019-12-02 21:56:38.422 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/api/savingstransaction/searchresult],methods=[GET]}" onto public java.util.List<com.hendisantika.onlinebanking.entity.SavingsTransaction> com.hendisantika.onlinebanking.resource.UserResource.searchSavingsTransactionList(java.lang.String,java.util.Date,java.lang.String,java.lang.String,java.lang.Double)
+2019-12-02 21:56:38.423 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/api/user/{username}/enable]}" onto public void com.hendisantika.onlinebanking.resource.UserResource.enableUser(java.lang.String)
+2019-12-02 21:56:38.423 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/api/user/{username}/disable]}" onto public void com.hendisantika.onlinebanking.resource.UserResource.diableUser(java.lang.String)
+2019-12-02 21:56:38.427 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2019-12-02 21:56:38.428 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2019-12-02 21:56:38.429 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2019-12-02 21:56:38.432 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-12-02 21:56:38.433 [INFO ] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544) - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-12-02 21:56:38.731 [INFO ] org.springframework.security.web.DefaultSecurityFilterChain.<init>(DefaultSecurityFilterChain.java:43) - Creating filter chain: Ant [pattern='/api/**'], []
+2019-12-02 21:56:38.820 [INFO ] org.springframework.security.web.DefaultSecurityFilterChain.<init>(DefaultSecurityFilterChain.java:43) - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@130860bc, org.springframework.security.web.context.SecurityContextPersistenceFilter@2dcdf090, org.springframework.security.web.header.HeaderWriterFilter@541efbdb, org.springframework.security.web.authentication.logout.LogoutFilter@26409143, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@51bb1b38, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@41639d48, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b130009, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@cd5aa33, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76297084, org.springframework.security.web.session.SessionManagementFilter@21809124, org.springframework.security.web.access.ExceptionTranslationFilter@4a9d01c6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3401f83c]
+2019-12-02 21:56:38.872 [INFO ] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods(PropertySourcedRequestMappingHandlerMapping.java:69) - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-12-02 21:56:39.127 [INFO ] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:557) - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@aa46cb2: startup date [Mon Dec 02 21:56:31 PST 2019]; root of context hierarchy
+2019-12-02 21:56:39.206 [INFO ] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:364) - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-12-02 21:56:39.206 [INFO ] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:364) - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-12-02 21:56:39.262 [INFO ] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:364) - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-12-02 21:56:39.976 [INFO ] org.springframework.jmx.export.MBeanExporter.afterSingletonsInstantiated(MBeanExporter.java:431) - Registering beans for JMX exposure on startup
+2019-12-02 21:56:39.991 [INFO ] org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:345) - Starting beans in phase 2147483647
+2019-12-02 21:56:39.992 [INFO ] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) - Context refreshed
+2019-12-02 21:56:40.025 [INFO ] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) - Found 1 custom documentation plugin(s)
+2019-12-02 21:56:40.068 [INFO ] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) - Scanning for api listing references
+2019-12-02 21:56:40.182 [WARN ] springfox.documentation.spring.web.readers.parameter.ParameterTypeReader.findParameterType(ParameterTypeReader.java:80) - @ModelAttribute annotated parameters should have already been expanded via the ExpandedParameterBuilderPlugin
+2019-12-02 21:56:40.182 [WARN ] springfox.documentation.spring.web.readers.parameter.ParameterTypeReader.findParameterType(ParameterTypeReader.java:80) - @ModelAttribute annotated parameters should have already been expanded via the ExpandedParameterBuilderPlugin
+2019-12-02 21:56:40.213 [WARN ] springfox.documentation.spring.web.readers.parameter.ParameterTypeReader.findParameterType(ParameterTypeReader.java:80) - @ModelAttribute annotated parameters should have already been expanded via the ExpandedParameterBuilderPlugin
+2019-12-02 21:56:40.214 [WARN ] springfox.documentation.spring.web.readers.parameter.ParameterTypeReader.findParameterType(ParameterTypeReader.java:80) - @ModelAttribute annotated parameters should have already been expanded via the ExpandedParameterBuilderPlugin
+2019-12-02 21:56:40.256 [INFO ] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40) - Generating unique operation named: depositPOSTUsingPOST_1
+2019-12-02 21:56:40.289 [WARN ] springfox.documentation.spring.web.readers.parameter.ParameterTypeReader.findParameterType(ParameterTypeReader.java:80) - @ModelAttribute annotated parameters should have already been expanded via the ExpandedParameterBuilderPlugin
+2019-12-02 21:56:40.421 [WARN ] springfox.documentation.spring.web.readers.parameter.ParameterTypeReader.findParameterType(ParameterTypeReader.java:80) - @ModelAttribute annotated parameters should have already been expanded via the ExpandedParameterBuilderPlugin
+2019-12-02 21:56:40.422 [WARN ] springfox.documentation.spring.web.readers.parameter.ParameterTypeReader.findParameterType(ParameterTypeReader.java:80) - @ModelAttribute annotated parameters should have already been expanded via the ExpandedParameterBuilderPlugin
+2019-12-02 21:56:40.422 [WARN ] springfox.documentation.spring.web.readers.parameter.ParameterTypeReader.findParameterType(ParameterTypeReader.java:80) - @ModelAttribute annotated parameters should have already been expanded via the ExpandedParameterBuilderPlugin
+2019-12-02 21:56:40.437 [WARN ] springfox.documentation.spring.web.readers.parameter.ParameterTypeReader.findParameterType(ParameterTypeReader.java:80) - @ModelAttribute annotated parameters should have already been expanded via the ExpandedParameterBuilderPlugin
+2019-12-02 21:56:40.437 [WARN ] springfox.documentation.spring.web.readers.parameter.ParameterTypeReader.findParameterType(ParameterTypeReader.java:80) - @ModelAttribute annotated parameters should have already been expanded via the ExpandedParameterBuilderPlugin
+2019-12-02 21:56:40.438 [WARN ] springfox.documentation.spring.web.readers.parameter.ParameterTypeReader.findParameterType(ParameterTypeReader.java:80) - @ModelAttribute annotated parameters should have already been expanded via the ExpandedParameterBuilderPlugin
+2019-12-02 21:56:40.517 [INFO ] org.springframework.scheduling.quartz.SchedulerFactoryBean.startScheduler(SchedulerFactoryBean.java:684) - Starting Quartz Scheduler now
+2019-12-02 21:56:40.518 [INFO ] org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:547) - Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2019-12-02 21:56:40.533 [INFO ] org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:180) - Starting ProtocolHandler ["http-nio-8080"]
+2019-12-02 21:56:40.543 [ERROR] org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:182) - Failed to start connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:256) [spring-boot-1.5.22.RELEASE.jar:1.5.22.RELEASE]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:203) [spring-boot-1.5.22.RELEASE.jar:1.5.22.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:289) [spring-boot-1.5.22.RELEASE.jar:1.5.22.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145) [spring-boot-1.5.22.RELEASE.jar:1.5.22.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545) [spring-context-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:123) [spring-boot-1.5.22.RELEASE.jar:1.5.22.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:666) [spring-boot-1.5.22.RELEASE.jar:1.5.22.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:353) [spring-boot-1.5.22.RELEASE.jar:1.5.22.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:300) [spring-boot-1.5.22.RELEASE.jar:1.5.22.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1082) [spring-boot-1.5.22.RELEASE.jar:1.5.22.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1071) [spring-boot-1.5.22.RELEASE.jar:1.5.22.RELEASE]
+	at com.hendisantika.onlinebanking.OnlineBankingApplication.main(OnlineBankingApplication.java:12) [classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_221]
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:517) [spring-boot-maven-plugin-1.5.22.RELEASE.jar:1.5.22.RELEASE]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_221]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1020) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 19 more
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method) ~[?:1.8.0_221]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[?:1.8.0_221]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[?:1.8.0_221]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[?:1.8.0_221]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[?:1.8.0_221]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:219) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1191) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:591) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1018) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 19 more
+2019-12-02 21:56:40.553 [INFO ] org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:180) - Pausing ProtocolHandler ["http-nio-8080"]
+2019-12-02 21:56:40.554 [INFO ] org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:180) - Stopping service [Tomcat]
+2019-12-02 21:56:40.568 [INFO ] org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:180) - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+2019-12-02 21:56:40.570 [INFO ] org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:180) - Stopping ProtocolHandler ["http-nio-8080"]
+2019-12-02 21:56:40.570 [INFO ] org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:180) - Destroying ProtocolHandler ["http-nio-8080"]
+2019-12-02 21:56:40.589 [ERROR] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter.report(LoggingFailureAnalysisReporter.java:40) - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2019-12-02 21:56:40.590 [INFO ] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:985) - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@aa46cb2: startup date [Mon Dec 02 21:56:31 PST 2019]; root of context hierarchy
+2019-12-02 21:56:40.592 [INFO ] org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:360) - Stopping beans in phase 2147483647
+2019-12-02 21:56:40.593 [INFO ] org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) - Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-12-02 21:56:40.593 [INFO ] org.springframework.jmx.export.MBeanExporter.destroy(MBeanExporter.java:449) - Unregistering JMX-exposed beans on shutdown
+2019-12-02 21:56:40.596 [INFO ] org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) - Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutting down.
+2019-12-02 21:56:40.597 [INFO ] org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) - Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-12-02 21:56:40.597 [INFO ] org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) - Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutdown complete.
+2019-12-02 21:56:40.597 [INFO ] org.springframework.scheduling.quartz.SchedulerFactoryBean.destroy(SchedulerFactoryBean.java:806) - Shutting down Quartz Scheduler
+2019-12-02 21:56:40.600 [INFO ] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.destroy(AbstractEntityManagerFactoryBean.java:590) - Closing JPA EntityManagerFactory for persistence unit 'default'
+[WARNING] 
+java.lang.reflect.InvocationTargetException
+    at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run (AbstractRunMojo.java:517)
+    at java.lang.Thread.run (Thread.java:748)
+Caused by: org.springframework.boot.context.embedded.tomcat.ConnectorStartFailedException: Connector configured to listen on port 8080 failed to start
+    at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.checkThatConnectorsHaveStarted (TomcatEmbeddedServletContainer.java:229)
+    at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start (TomcatEmbeddedServletContainer.java:208)
+    at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer (EmbeddedWebApplicationContext.java:289)
+    at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh (EmbeddedWebApplicationContext.java:145)
+    at org.springframework.context.support.AbstractApplicationContext.refresh (AbstractApplicationContext.java:545)
+    at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh (EmbeddedWebApplicationContext.java:123)
+    at org.springframework.boot.SpringApplication.refresh (SpringApplication.java:666)
+    at org.springframework.boot.SpringApplication.refreshContext (SpringApplication.java:353)
+    at org.springframework.boot.SpringApplication.run (SpringApplication.java:300)
+    at org.springframework.boot.SpringApplication.run (SpringApplication.java:1082)
+    at org.springframework.boot.SpringApplication.run (SpringApplication.java:1071)
+    at com.hendisantika.onlinebanking.OnlineBankingApplication.main (OnlineBankingApplication.java:12)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run (AbstractRunMojo.java:517)
+    at java.lang.Thread.run (Thread.java:748)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.703 s
+[INFO] Finished at: 2019-12-02T21:56:40-08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:1.5.22.RELEASE:run (default-cli) on project online-banking: An exception occurred while running. null: InvocationTargetException: Connector configured to listen on port 8080 failed to start -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

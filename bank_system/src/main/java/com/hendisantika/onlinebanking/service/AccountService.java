@@ -3,6 +3,9 @@ package com.hendisantika.onlinebanking.service;
 import com.hendisantika.onlinebanking.entity.PrimaryAccount;
 import com.hendisantika.onlinebanking.entity.SavingsAccount;
 import com.hendisantika.onlinebanking.entity.User;
+import org.springframework.data.jpa.repository.Query;
+
+import java.math.BigDecimal;
 import java.security.Principal;
 
 /**
@@ -19,8 +22,6 @@ public interface AccountService {
   void deposit(String accountType, double amount, Principal principal);
 
   void deposit(String accountType, double amount, String targetUserName);
-
-
 
   void withdraw(String accountType, double amount, Principal principal);
 

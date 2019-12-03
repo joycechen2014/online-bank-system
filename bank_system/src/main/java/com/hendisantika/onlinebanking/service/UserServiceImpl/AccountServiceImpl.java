@@ -14,6 +14,7 @@ import java.math.BigDecimal;
 import java.security.Principal;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 /**
@@ -24,7 +25,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AccountServiceImpl implements AccountService {
 
-  private static int nextAccountNumber = 11223101;
+  //private static int nextAccountNumber = 11223101;
 
   @Autowired
   private PrimaryAccountDao primaryAccountDao;
@@ -148,8 +149,10 @@ public class AccountServiceImpl implements AccountService {
     }
   }
 
+
   private int accountGen() {
-    return ++nextAccountNumber;
+    int currentAccountNumber  = savingsAccountDao.getMaxAccountNumber();
+    return ++currentAccountNumber;
   }
 
 

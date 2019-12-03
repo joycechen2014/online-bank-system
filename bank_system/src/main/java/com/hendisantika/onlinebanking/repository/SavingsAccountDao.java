@@ -1,6 +1,7 @@
 package com.hendisantika.onlinebanking.repository;
 
 import com.hendisantika.onlinebanking.entity.SavingsAccount;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -11,4 +12,7 @@ import org.springframework.data.repository.CrudRepository;
 public interface SavingsAccountDao extends CrudRepository<SavingsAccount, Long> {
 
   SavingsAccount findByAccountNumber(int accountNumber);
+
+  @Query(value = "SELECT max(account_number) FROM savings_account", nativeQuery = true)
+  int getMaxAccountNumber();
 }
