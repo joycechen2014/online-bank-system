@@ -3,7 +3,7 @@
 - **/onetime/transfer/start** 一次性转账
 - **/recurring/transfer/shutdown** 关闭定时转账任务
 - **/admin/refund** 管理员退款
-# Using ostman to test API
+# Using postman to test API
 
 # API使用前提
 必须登录并获取Cookie
