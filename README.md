@@ -59,9 +59,10 @@ The emphasis here is on team collaboration, so the points awarded will be based 
 
 - Create an Overall **Architecture Diagram (this does not have to be in UML) **showing:  
 
-    - Software Components and their Public Interfaces![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/AccoutApi.png)
+    - Software Components and their Public Interfaces
     - The Dependencies between Components
     - The Relative Relationship of how these components are Deployed
+    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/AccoutApi.png)
     - Recommendation:  Use UML Deployment/Component Diagram Notation.
         - [http://agilemodeling.com/artifacts/deploymentDiagram.htm (Links to an external site.)Links to an external site.](http://agilemodeling.com/artifacts/deploymentDiagram.htm)
         - [http://agilemodeling.com/artifacts/componentDiagram.htm (Links to an external site.)Links to an external site.](http://agilemodeling.com/artifacts/componentDiagram.htm)
