@@ -1,11 +1,6 @@
 package com.hendisantika.onlinebanking.controller;
 
-import com.hendisantika.onlinebanking.entity.ApiResultEnum;
-import com.hendisantika.onlinebanking.entity.QuartzBean;
-import com.hendisantika.onlinebanking.entity.Recipient;
-import com.hendisantika.onlinebanking.entity.Result;
-import com.hendisantika.onlinebanking.entity.TransferMoneyDTO;
-import com.hendisantika.onlinebanking.entity.User;
+import com.hendisantika.onlinebanking.entity.*;
 import com.hendisantika.onlinebanking.exception.InsufficientBalanceException;
 import com.hendisantika.onlinebanking.service.SchedulerService;
 import com.hendisantika.onlinebanking.service.TransactionService;
@@ -39,6 +34,7 @@ public class TransferRestController {
   private SchedulerService schedulerService;
 
   private final String jobClassLiteral = "com.hendisantika.onlinebanking.job.RecurringTransferMoneyJob";
+  private final String jobClassLiteral2 = "com.hendisantika.onlinebanking.job.RecurringAccountsMoneyTransfer";
 
   @ApiOperation("start recurring transfer api")
   @PostMapping(value = "/recurring/transfer/start")
@@ -92,6 +88,20 @@ public class TransferRestController {
       e.printStackTrace();
       logger.error("shutting job encounter error!");
       return Result.error(ApiResultEnum.SHUTTING_RECURRING_JOB_ERROR);
+    }
+    return Result.ok();
+  }
+  
+  @ApiOperation("start onetime transfer between accounts")
+  @PostMapping(value = "/onetime/transferbetweenaccounts")
+  public Result TriggerOnetimeBetweenAccounts(@RequestBody AccountsMoneyTransferDTO payload, Principal principal) {
+    User user = userService.findByUsername(principal.getName());
+    try {transactionService.betweenAccountsTransfer(payload.getTransferFrom(), payload.getTransferTo(), payload.getAmount(),
+            user.getPrimaryAccount(),
+            user.getSavingsAccount());
+    } catch (Exception e) {
+      e.printStackTrace();
+      return Result.error(ApiResultEnum.CREATING_TRANSFER_JOB_ERROR);
     }
     return Result.ok();
   }
