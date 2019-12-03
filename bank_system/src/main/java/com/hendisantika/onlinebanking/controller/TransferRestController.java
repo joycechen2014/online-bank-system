@@ -92,6 +92,24 @@ public class TransferRestController {
     return Result.ok();
   }
   
+  @ApiOperation("start recurring transfer between accounts")
+  @PostMapping(value = "/recurring/transferbetweenaccounts")
+  public Result TriggerRecurringBetweenAccounts(@RequestBody AccountsMoneyTransferDTO payload, Principal principal) {
+    //User user = userService.findByUsername(principal.getName());
+    QuartzBean bean = new QuartzBean();
+    bean.setId("002");
+    bean.setJobName(jobClassLiteral2);
+    bean.setJobClass(jobClassLiteral2);
+    bean.setCronExpression(payload.getCron());
+
+    try {schedulerService.createRecurringAccountsMoneyTransfer(bean, payload, principal);
+    } catch (SchedulerException e) {
+      e.printStackTrace();
+      return Result.error(ApiResultEnum.CREATING_RECURRING_TRANSFER_JOB_ERROR);
+    }
+    return Result.ok();
+  }
+  
   @ApiOperation("start onetime transfer between accounts")
   @PostMapping(value = "/onetime/transferbetweenaccounts")
   public Result TriggerOnetimeBetweenAccounts(@RequestBody AccountsMoneyTransferDTO payload, Principal principal) {
