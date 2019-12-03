@@ -60,7 +60,7 @@ public class AccountServiceImpl implements AccountService {
   }
 
   public void deposit(String accountType, double amount, Principal principal) {
-   // System.out.println("------------------------------------ Principal  = " + principal.getName());
+
     User user = userService.findByUsername(principal.getName());
 
     if (accountType.equalsIgnoreCase("Primary")) {
@@ -94,6 +94,7 @@ public class AccountServiceImpl implements AccountService {
   public void deposit(String accountType, double amount, String targetUserName) {
     User targetUser = userService.findByUsername(targetUserName);
     if (accountType.equalsIgnoreCase("Primary")) {
+      //System.out.println("------------------------primahry");
       PrimaryAccount primaryAccount = targetUser.getPrimaryAccount();
       primaryAccount
           .setAccountBalance(primaryAccount.getAccountBalance().add(new BigDecimal(amount)));

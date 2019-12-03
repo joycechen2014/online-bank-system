@@ -164,10 +164,12 @@ public class User implements UserDetails {
         ", lastName='" + lastName + '\'' +
         ", email='" + email + '\'' +
         ", phone='" + phone + '\'' +
-        ", appointmentList=" + appointmentList +
-        ", recipientList=" + recipientList +
-        ", userRoles=" + userRoles +
-        '}';
+       // ", appointmentList=" + appointmentList +
+       // ", recipientList=" + recipientList +
+       // ", userRoles=" + userRoles +
+        ",savingAccount" + this.getSavingsAccount()  + '\'' +
+            ",PrimaryAccount" + this.getPrimaryAccount()  + '\'' +
+            '}';
   }
 
   @Override

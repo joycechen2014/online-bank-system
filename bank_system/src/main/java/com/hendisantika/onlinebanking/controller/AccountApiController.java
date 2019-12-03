@@ -95,6 +95,20 @@ public class AccountApiController {
         userDao.save(user);
         return user.toString();
     }
+
+    @PutMapping("api/deposit/{accountType}/{amount}/{receiver}")
+    public String accDeposit(@PathVariable String accountType,@PathVariable double amount, @PathVariable String receiver) {
+        // User user = new User();
+        accountService.deposit(accountType,amount,receiver);
+       // User user = userService.findByuserId(Long.parseLong(id));
+        //User user = userService.findByUsername(id);
+       User user =  userService.findByUsername(receiver);
+        //user.setSavingsAccount(accountService.createSavingsAccount());
+
+        //userDao.save(user);
+        return "PrimaryBalance : " + user.getPrimaryAccount().getAccountBalance().toString() + '\'' +
+                "SavingBalancd : " + user.getSavingsAccount().getAccountBalance().toString();
+    }
 }
 
 
