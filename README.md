@@ -46,7 +46,7 @@ Online Banking system.
 >Admin refund
 - **/admin/refund** 
 
-# Using postman to test API
+# Using postman to test APIs
 
 * Register new user.
     * URL: Register new user: http://localhost:8080/api/addUser
@@ -75,7 +75,23 @@ Online Banking system.
        * Add Primary Accounts: http://localhost:8080/api/deposit/{accountType}/{amount}/{receiver}"
        * Method: PUT
         * Params:
-               * Required: AccountType (savings or primary),Amount,Receiver (username)              
+               * Required: AccountType (savings or primary),Amount,Receiver (username)       
+* Transfer between accounts - one time
+     * URL: http://localhost:8080/onetime/transferbetweenaccounts
+     * Method: POST
+     * Params Example:
+       ```json
+        {
+	"transferFrom":"Primary",
+	"transferTo":"Savings",
+	"amount":"10"
+        }
+       ``` 
+* Transfer between accounts - recurring
+        * URL: 
+        * Method: POST
+        Params Example:
+        
 * One time transfer
      * Prerequisite : get cookie with logged in status from browser and put it on Postman
      * URL:
