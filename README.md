@@ -56,12 +56,10 @@ The emphasis here is on team collaboration, so the points awarded will be based 
 - Maintain a **Scrum Task Board (using GitHub Project Board)**
 - Create **UI Wireframes**
     - Create UI wireframes for each of the screen in your team’s solution
-    - Sign up
-    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/WechatIMG78.jpeg)
 
 - Create an Overall **Architecture Diagram (this does not have to be in UML) **showing:  
 
-    - Software Components and their Public Interfaces
+    - Software Components and their Public Interfaces![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/AccoutApi.png)
     - The Dependencies between Components
     - The Relative Relationship of how these components are Deployed
     - Recommendation:  Use UML Deployment/Component Diagram Notation.
