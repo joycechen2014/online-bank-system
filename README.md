@@ -2,7 +2,7 @@
 team-project-newteam created by GitHub Classroom
 ### 
 
-##Use Case:
+## Use Case:
 
 Online Banking system. 
 * Design and implement supporting APIs for a banking system including a Database of your choice to persist Customer data.
@@ -20,7 +20,7 @@ Online Banking system.
  ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/UseCase%20Diagram0.png)
 
 
-##Diagram:
+## Diagram:
     
    - Architecture
     ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/Architecture.png)
