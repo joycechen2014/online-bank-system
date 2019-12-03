@@ -9,6 +9,7 @@ Online Banking system.
 
         - register for new user
         - Adding new accounts - Checking, Savings
+        - Deposit money
         - Closing existing accounts
         - Transfer between accounts - one time or recurring
         - Set up recurring or one-time Bill payment for external payees
@@ -103,8 +104,8 @@ Online Banking system.
      ```        
 * View and search  Transactions
     * URL: 
-        * Checking Accounts: localhost:8080/api/primarytransaction/searchresult
-        * Saving Accounts: localhost:8080/api/savingstransaction/searchresult
+        * Checking Accounts: http://localhost:8080/api/primarytransaction/searchresult
+        * Saving Accounts: http://localhost:8080/api/savingstransaction/searchresult
     * Prerequisite: get cookie with logged in status from browser and put it on Postman
     * Method: GET
     * Params:
