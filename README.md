@@ -5,9 +5,7 @@ team-project-newteam created by GitHub Classroom
 **Use Case:**
 
 Online Banking system (that can be accessed through Web/Mobile). - Design and implement supporting APIs for a banking system including a Database of your choice to persist Customer data.
-
-The emphasis here is on team collaboration, so the points awarded will be based on individual contributions to the team and how the team performed overall.  Extra credit will be given for additional challenges as spelled out below.
-
+ ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/UseCase%20Diagram0.png)
 **Suggested Project Components and Extra Credit (don't limit to these): (50 points)**
 
 - **Components (one component per team member)  **
