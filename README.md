@@ -56,11 +56,13 @@ Online Banking system (that can be accessed through Web/Mobile). - Design and im
     - Create UI wireframes for each of the screen in your team’s solution
 
 - Create an Overall **Architecture Diagram (this does not have to be in UML) **showing:  
-
-    - Software Components and their Public Interfaces
-    - The Dependencies between Components
-    - The Relative Relationship of how these components are Deployed
+    
+    - Architecture
+    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/Architecture.png)
+    - Register and add account
     ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/AccoutApi.png)
+
+    
     - Recommendation:  Use UML Deployment/Component Diagram Notation.
         - [http://agilemodeling.com/artifacts/deploymentDiagram.htm (Links to an external site.)Links to an external site.](http://agilemodeling.com/artifacts/deploymentDiagram.htm)
         - [http://agilemodeling.com/artifacts/componentDiagram.htm (Links to an external site.)Links to an external site.](http://agilemodeling.com/artifacts/componentDiagram.htm)
