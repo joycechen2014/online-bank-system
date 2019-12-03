@@ -30,7 +30,7 @@ public class AccountApiController {
     @Autowired
     private AccountService accountService;
 
-    @PostMapping("account/addUser")
+    @PostMapping("api/addUser")
     public String create(@RequestBody Map<String, String> body) {
         User user = new User();
         user.setUsername(body.get("username"));
@@ -58,7 +58,7 @@ public class AccountApiController {
         }
          return "";
     }
-    @PutMapping("account/addPrimaryAcc/{id}")
+    @PutMapping("api/addPrimaryAcc/{id}")
     public String addPrimaryAcc(@PathVariable( "id" ) Long id) {
         //User user = new User();
         Preconditions.checkNotNull(id);
@@ -72,7 +72,7 @@ public class AccountApiController {
         return user.toString();
     }
 
-    @GetMapping("account/get/{id}")
+    @GetMapping("api/get/{id}")
     public String getAccount(@PathVariable String id) {
        // User user = new User();
         User user = userService.findByuserId(Long.parseLong(id));
@@ -84,7 +84,7 @@ public class AccountApiController {
         return user.toString();
     }
 
-    @PutMapping("account/addCheckingAcc/{id}")
+    @PutMapping("api/addCheckingAcc/{id}")
     public String addCheckingAcc(@PathVariable String id) {
         // User user = new User();
         User user = userService.findByuserId(Long.parseLong(id));

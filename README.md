@@ -131,8 +131,8 @@ _**[Sample Sprint Review.png]()**_
     ```
 *   Add Primary Account and Savings Account. 
      * URL: 
-       * Add Primary Accounts: http://localhost:8080/account/addPrimaryAcc/{id}
-       * Add Savings Accounts: http://localhost:8080/account/addCheckingAcc/{id}
+       * Add Primary Accounts: http://localhost:8080/api/addPrimaryAcc/{id}
+       * Add Savings Accounts: http://localhost:8080/api/addCheckingAcc/{id}
        * Method: PUT
         * Params:
                * Required: User_id
