@@ -81,11 +81,11 @@ Online Banking system.
      * Method: POST
      * Params Example:
        ```json
-        {
-	"transferFrom":"Primary",
-	"transferTo":"Savings",
-	"amount":"10"
-        }
+       {
+		"transferFrom":"Primary",
+		"transferTo":"Savings",
+		"amount":"10"
+       }
        ``` 
 * Transfer between accounts - recurring
         * URL: 
