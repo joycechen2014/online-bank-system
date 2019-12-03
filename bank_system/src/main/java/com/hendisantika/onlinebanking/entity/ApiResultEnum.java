@@ -20,6 +20,8 @@ public enum ApiResultEnum {
   CREATING_RECURRING_JOB_ERROR("20000","Creating Recurring Job Error!"),
 	SHUTTING_RECURRING_JOB_ERROR("20001","Shutting Recurring Job Error!"),
 	INSUFFICIENT_BALANCE_ERROR("20005","Insufficient Balance Error!"),
+	CREATING_TRANSFER_JOB_ERROR("60000", "One Time Transfer Error!"),
+	CREATING_RECURRING_TRANSFER_JOB_ERROR("60001", "Recurring Transfer Error!"),
 	ACCOUNT_NOT_FOUND("20002","找不到账户信息"),
 	ACCOUNT_PASSWARD_ERROR("20003","用户名密码错误"),
 	ACCOUNT_EXIST("20004","账号已存在"),
