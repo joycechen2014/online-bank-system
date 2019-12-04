@@ -88,10 +88,17 @@ Online Banking system.
        }
        ``` 
 * Transfer between accounts - recurring
-        * URL: 
-        * Method: POST
-        Params Example:
-        
+     * URL: http://localhost:8080/recurring/transferbetweenaccounts
+     * Method: POST
+     * Params Example:
+	```json
+	{
+	"transferFrom":"Primary",
+	"transferTo":"Savings",
+	"amount":"1",
+	"cron":"*/2 * * * * ?"
+	}
+        ```
 * One time transfer
      * Prerequisite : get cookie with logged in status from browser and put it on Postman
      * URL:
