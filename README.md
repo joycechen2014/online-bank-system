@@ -127,8 +127,10 @@ Online Banking system.
      ```        
 * View and search  Transactions
     * URL: 
-        * Checking Accounts: http://localhost:8080/api/primarytransaction/searchresult
-        * Saving Accounts: http://localhost:8080/api/savingstransaction/searchresult
+    	* View all transactions in checking accounts: http://localhost:8080/api/user/primary/transaction
+		* View all transactions in saving accounts: http://localhost:8080/api/user/savings/transaction
+		* Search transactions in checking accounts: http://localhost:8080/api/primarytransaction/searchresult
+		* Search transactions in saving accounts: http://localhost:8080/api/savingstransaction/searchresult
     * Prerequisite: get cookie with logged in status from browser and put it on Postman
     * Method: GET
     * Params:
