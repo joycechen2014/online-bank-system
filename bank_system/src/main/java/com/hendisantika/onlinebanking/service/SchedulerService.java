@@ -1,5 +1,6 @@
 package com.hendisantika.onlinebanking.service;
 
+import com.hendisantika.onlinebanking.entity.AccountsMoneyTransferDTO;
 import com.hendisantika.onlinebanking.entity.QuartzBean;
 import com.hendisantika.onlinebanking.entity.TransferMoneyDTO;
 import com.hendisantika.onlinebanking.job.RecurringTransferMoneyJob;
@@ -138,6 +139,13 @@ public class SchedulerService {
 
   public void createScheduleJob(QuartzBean bean, TransferMoneyDTO payload, Principal principal)
       throws SchedulerException {
+    scheduler.getContext().put("payload", payload);
+    scheduler.getContext().put("principal", principal);
+    createScheduleJob(bean);
+  }
+  
+  public void createRecurringAccountsMoneyTransfer(QuartzBean bean, AccountsMoneyTransferDTO payload, Principal principal)
+  throws SchedulerException {
     scheduler.getContext().put("payload", payload);
     scheduler.getContext().put("principal", principal);
     createScheduleJob(bean);
