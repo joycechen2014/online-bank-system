@@ -79,7 +79,7 @@ Online Banking system.
 * Transfer between accounts - one time
      * URL: http://localhost:8080/onetime/transferbetweenaccounts
      * Method: POST
-     * Params Example:
+     * Params Example: transfer $10 from checking account to saving account one time
        ```json
        {
 		"transferFrom":"Primary",
@@ -90,7 +90,7 @@ Online Banking system.
 * Transfer between accounts - recurring
      * URL: http://localhost:8080/recurring/transferbetweenaccounts
      * Method: POST
-     * Params Example:
+     * Params Example: transfer $1 from checking account to saving account every 2 sec
 	```json
 	{
 	"transferFrom":"Primary",
