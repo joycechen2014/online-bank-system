@@ -109,6 +109,40 @@ public class AccountApiController {
         return "PrimaryBalance : " + user.getPrimaryAccount().getAccountBalance().toString() + '\'' +
                 "SavingBalancd : " + user.getSavingsAccount().getAccountBalance().toString();
     }
+
+    @DeleteMapping("api/deleteCheckingAcc/{uid}/{aid}")
+    public String deleteCheckingAcc(@PathVariable String uid, @PathVariable String aid) {
+        Long userId = Long.parseLong(uid);
+        Long accountId = Long.parseLong(aid);
+        User user = userService.findByuserId(userId);
+        if ( (user.getPrimaryAccount() != null) && (user.getPrimaryAccount().getId() == accountId)) {
+            user.setPrimaryAccount(null);
+            userDao.save(user);
+        } else {
+            return "{\"error\":\"no such account\"}";
+        }
+        if (!accountService.deletePrimaryAccount(accountId)) {
+            return "{\"error\":\"no such account\"}";
+        }
+        return "";
+    }
+
+    @DeleteMapping("api/deleteSavingsAcc/{uid}/{aid}")
+    public String deleteSavingsAcc(@PathVariable String uid, @PathVariable String aid) {
+        Long userId = Long.parseLong(uid);
+        Long accountId = Long.parseLong(aid);
+        User user = userService.findByuserId(userId);
+        if ((user.getSavingsAccount() != null) && (user.getSavingsAccount().getId() == accountId)) {
+            user.setSavingsAccount(null);
+            userDao.save(user);
+        } else {
+            return "{\"error\":\"no such account\"}";
+        }
+        if (!accountService.deleteSavingsAccount(accountId)) {
+            return "{\"error\":\"no such account\"}";
+        }
+        return "";
+    }
 }
 
 

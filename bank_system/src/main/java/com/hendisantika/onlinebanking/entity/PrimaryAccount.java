@@ -3,17 +3,10 @@ package com.hendisantika.onlinebanking.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.math.BigDecimal;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 /**
- * Created by IntelliJ IDEA. Project : online-banking User: hendisantika Email:
- * hendisantika@gmail.com Telegram : @hendisantika34 Date: 07/08/18 Time: 06.49 To change this
+ * Created by IntelliJ IDEA. Project : online-banking User: Lijuan Hou
  * template use File | Settings | File Templates.
  */
 @Entity
@@ -24,6 +17,8 @@ public class PrimaryAccount {
   private Long id;
   private int accountNumber;
   private BigDecimal accountBalance;
+  @Column(name = "enabled", columnDefinition="BIT")
+  private Boolean enabled;
 
   @OneToMany(mappedBy = "primaryAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   @JsonIgnore
@@ -61,5 +56,16 @@ public class PrimaryAccount {
     this.primaryTransactionList = primaryTransactionList;
   }
 
+  public Boolean isEnabled() {
+    return enabled;
+  }
+
+  public void disable() {
+    enabled = false;
+  }
+
+  public void enable() {
+    enabled = true;
+  }
 
 }

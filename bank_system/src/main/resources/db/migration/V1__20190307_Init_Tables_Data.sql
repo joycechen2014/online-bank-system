@@ -59,6 +59,7 @@ CREATE TABLE `primary_account` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `account_balance` decimal(19,2) DEFAULT NULL,
   `account_number` int(11) NOT NULL,
+  `enabled` bit(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -69,7 +70,7 @@ CREATE TABLE `primary_account` (
 
 LOCK TABLES `primary_account` WRITE;
 /*!40000 ALTER TABLE `primary_account` DISABLE KEYS */;
-INSERT INTO `primary_account` VALUES (1,1700.00,11223101),(2,0.00,11223101);
+INSERT INTO `primary_account` VALUES (1,1700.00,11223101,TRUE),(2,0.00,11223101,TRUE);
 /*!40000 ALTER TABLE `primary_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -181,6 +182,7 @@ CREATE TABLE `savings_account` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `account_balance` decimal(19,2) DEFAULT NULL,
   `account_number` int(11) NOT NULL,
+  `enabled` bit(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -191,7 +193,7 @@ CREATE TABLE `savings_account` (
 
 LOCK TABLES `savings_account` WRITE;
 /*!40000 ALTER TABLE `savings_account` DISABLE KEYS */;
-INSERT INTO `savings_account` VALUES (1,4250.00,11223147),(2,0.00,11223151);
+INSERT INTO `savings_account` VALUES (1,4250.00,11223147,TRUE),(2,0.00,11223151,TRUE);
 /*!40000 ALTER TABLE `savings_account` ENABLE KEYS */;
 UNLOCK TABLES;
 

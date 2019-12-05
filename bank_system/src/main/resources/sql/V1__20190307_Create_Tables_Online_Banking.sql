@@ -25,6 +25,7 @@ CREATE TABLE `primary_account` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `account_balance` decimal(19,2) DEFAULT NULL,
   `account_number` int(11) NOT NULL,
+  `enabled` bit(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
@@ -89,6 +90,7 @@ CREATE TABLE `savings_account` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `account_balance` decimal(19,2) DEFAULT NULL,
   `account_number` int(11) NOT NULL,
+  `enabled` bit(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 --

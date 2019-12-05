@@ -43,20 +43,42 @@ public class AccountServiceImpl implements AccountService {
     PrimaryAccount primaryAccount = new PrimaryAccount();
     primaryAccount.setAccountBalance(new BigDecimal(0.0));
     primaryAccount.setAccountNumber(accountGen());
+    primaryAccount.enable();
 
     primaryAccountDao.save(primaryAccount);
 
     return primaryAccountDao.findByAccountNumber(primaryAccount.getAccountNumber());
   }
 
+  public Boolean deletePrimaryAccount(Long id) {
+    PrimaryAccount account = primaryAccountDao.findById(id);
+    if (account != null) {
+      account.disable();
+      primaryAccountDao.save(account);
+      return true;
+    }
+    return false;
+  }
+
   public SavingsAccount createSavingsAccount() {
     SavingsAccount savingsAccount = new SavingsAccount();
     savingsAccount.setAccountBalance(new BigDecimal(0.0));
     savingsAccount.setAccountNumber(accountGen());
+    savingsAccount.enable();
 
     savingsAccountDao.save(savingsAccount);
 
     return savingsAccountDao.findByAccountNumber(savingsAccount.getAccountNumber());
+  }
+
+  public Boolean deleteSavingsAccount(Long id) {
+    SavingsAccount account = savingsAccountDao.findById(id);
+    if (account != null) {
+      account.disable();
+      savingsAccountDao.save(account);
+      return true;
+    }
+    return false;
   }
 
   public void deposit(String accountType, double amount, Principal principal) {

@@ -25,4 +25,7 @@ public interface AccountService {
 
   void withdraw(String accountType, double amount, Principal principal);
 
+  Boolean deletePrimaryAccount(Long accountId);
+
+  Boolean deleteSavingsAccount(Long accountId);
 }

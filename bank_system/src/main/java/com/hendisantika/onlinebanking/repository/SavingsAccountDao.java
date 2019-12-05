@@ -13,6 +13,8 @@ public interface SavingsAccountDao extends CrudRepository<SavingsAccount, Long> 
 
   SavingsAccount findByAccountNumber(int accountNumber);
 
+  SavingsAccount findById(Long id);
+
   @Query(value = "SELECT max(account_number) FROM savings_account", nativeQuery = true)
   int getMaxAccountNumber();
 }
