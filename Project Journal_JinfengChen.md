@@ -3,7 +3,7 @@
 For CMPE202 final project.
 
 ## Weekly Scrum Report
-Communication is 
+
 
 Jinfeng Chen
 ```
@@ -11,7 +11,7 @@ WEEK #1 (Nov11 - Nov15)
    - First meeting with groupmember about project
    - Discuss the framework and decide to use spring Boot + Java
    - Plan to do reseach about spring Boot
-   - XP Core Values: Communication is very important for a team especially at the beginning fo the project and we need to clear up the requiremnt before we start it.
+   - XP Core Values(Communication): Communication is very important for a team especially at the beginning fo the project and we need to clear up the requiremnt before we start it.
 ```
 
 ```
@@ -19,13 +19,14 @@ WEEK #2 (Nov18 - Nov22)
    - Install and configure Spring Boot environment
    - Continue learning the framework of Spring Boot.
    - Share information during the process of intalling.
-   - XP Core Values: 
+   - XP Core Values(Communication): Team member can learn from each by communication whith eacho oterh 
 ```
 
 ```
 WEEK #3 (Nov25 - Nov29) 
    - Design database,create table users,savingsAccount and checkingAccount
    - finished the api of register and add account
+   - XP Core Values(Communication): By communication with team members 
 ```
 ```
 WEEK #4 (Dec2 - Dec6) 
