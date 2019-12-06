@@ -45,6 +45,9 @@ Online Banking system.
 - **/api/savingstransaction/searchresult**
 >Admin refund
 - **/admin/refund** 
+>Delete account
+- **/api/deleteCheckingAcc**
+- **/api/deleteSavingsAcc**
 
 # Using postman to test APIs
 
@@ -149,4 +152,9 @@ Online Banking system.
         "accountType": "Primary",
         "targetUserName":"kobe73er"
     }
-    ```    
+    ```
+* Delete account
+    * URL: 
+        * http://localhost:8080/api/deleteSavingsAcc/{userId}/{accountId}
+	* http://localhost:8080/api/deleteCheckingAcc/{userId}/{accountId}
+    * Method: Delete
