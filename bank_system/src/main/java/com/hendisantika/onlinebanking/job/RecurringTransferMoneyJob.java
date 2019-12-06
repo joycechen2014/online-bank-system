@@ -41,8 +41,8 @@ public class RecurringTransferMoneyJob implements Job {
       String amount = payload.getAmount();
       User user = userService.findByUsername(principal.getName());
       Recipient recipient = transactionService.findRecipientByAccountNumber(accountNumber);
-      logger.info(
-          "recurring transfer money from " + user.getUsername() + " to " + recipient.getName());
+//      logger.info(
+//          "recurring transfer money from " + user.getUsername() + " to " + recipient.getName());
       transactionService
           .toSomeoneElseTransfer(recipient, accountType, amount, user.getPrimaryAccount(),
               user.getSavingsAccount());

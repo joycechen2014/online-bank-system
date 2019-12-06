@@ -123,4 +123,17 @@ public class TransferRestController {
     }
     return Result.ok();
   }
+
+  @ApiOperation("shutdown recurring transfer between accounts api")
+  @GetMapping("/recurring/transferbetweenaccounts/shutdown")
+  public Result Accountshutdown() {
+    try {
+      schedulerService.deleteScheduleJob(jobClassLiteral2);
+    } catch (SchedulerException e) {
+      e.printStackTrace();
+      logger.error("shutting job encounter error!");
+      return Result.error(ApiResultEnum.SHUTTING_RECURRING_JOB_ERROR);
+    }
+    return Result.ok();
+  }
 }
