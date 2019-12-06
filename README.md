@@ -27,7 +27,12 @@ Online Banking system.
     ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/Architecture.png)
    - Register and add account
     ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/AccoutApi.png)
-
+   - Transfer between accounts - one time
+    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/transfer%20account.jpg)
+   - Transfer between accounts - recurring
+    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/transfer_account_reccuring.jpg)
+   - View and search  Transactions
+    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/transaction.jpg)
 ## APIs:
 >Register new user and add account
 - **/api/addUser**
@@ -45,6 +50,9 @@ Online Banking system.
 - **/api/savingstransaction/searchresult**
 >Admin refund
 - **/admin/refund** 
+>Delete account
+- **/api/deleteCheckingAcc**
+- **/api/deleteSavingsAcc**
 
 # Using postman to test APIs
 
@@ -98,7 +106,10 @@ Online Banking system.
 	"amount":"1",
 	"cron":"*/2 * * * * ?"
 	}
-        ```
+        
+* Shutting down recurring transfer between accounts
+	* URL: http://localhost:8080/recurring/transferbetweenaccounts/shutdown
+	* Method: GET
 * One time transfer
      * Prerequisite : get cookie with logged in status from browser and put it on Postman
      * URL:
@@ -124,7 +135,7 @@ Online Banking system.
      	"amount":"1",
      	"cron":"*/2 * * * * ?"
      }
-     ```        
+     ```
 * View and search  Transactions
     * URL: 
     	* View all transactions in checking accounts: http://localhost:8080/api/user/primary/transaction
@@ -149,4 +160,9 @@ Online Banking system.
         "accountType": "Primary",
         "targetUserName":"kobe73er"
     }
-    ```    
+    ```
+* Delete account
+    * URL: 
+        * http://localhost:8080/api/deleteSavingsAcc/{userId}/{accountId}
+	* http://localhost:8080/api/deleteCheckingAcc/{userId}/{accountId}
+    * Method: Delete
