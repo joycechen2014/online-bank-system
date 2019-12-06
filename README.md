@@ -136,6 +136,10 @@ Online Banking system.
      	"cron":"*/2 * * * * ?"
      }
      ```
+* Shutting down recurring transfer between accounts
+	* URL: http://localhost:8080/recurring/transfer/shutdown
+	* Method: GET
+
 * View and search  Transactions
     * URL: 
     	* View all transactions in checking accounts: http://localhost:8080/api/user/primary/transaction
