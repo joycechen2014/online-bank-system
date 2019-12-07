@@ -59,7 +59,7 @@ Online Banking system.
 - **/recurring/transfer/start**  
 - **/recurring/transfer/shutdown** 
 >View and search transaction
-- **/api/primarytransaction/searchresult**
+- **/api/checkingtransaction/searchresult**
 - **/api/savingstransaction/searchresult**
 >Admin refund
 - **/admin/refund** 
@@ -83,7 +83,7 @@ Online Banking system.
         }  
     ```
  
-*   Add Primary Account and Savings Account. 
+*   Add Checking Account and Savings Account. 
      * URL: 
        * Add Primary Accounts: http://localhost:8080/api/addPrimaryAcc/{id}
        * Add Savings Accounts: http://localhost:8080/api/addCheckingAcc/{id}
@@ -103,7 +103,7 @@ Online Banking system.
      * Params Example: transfer $10 from checking account to saving account one time
        ```json
        {
-		"transferFrom":"Primary",
+		"transferFrom":"Checking",
 		"transferTo":"Savings",
 		"amount":"10"
        }
@@ -114,7 +114,7 @@ Online Banking system.
      * Params Example: transfer $1 from checking account to saving account every 2 sec
 	```json
 	{
-	"transferFrom":"Primary",
+	"transferFrom":"Checking",
 	"transferTo":"Savings",
 	"amount":"1",
 	"cron":"*/2 * * * * ?"
@@ -132,7 +132,7 @@ Online Banking system.
        ```json
        {
        	"recipientName":"ad",
-       	"accountType":"Primary",
+       	"accountType":"Checking",
        	"amount":"1"
        }
        ``` 
@@ -144,7 +144,7 @@ Online Banking system.
      ```json
      {
      	"recipientName":"ad",
-     	"accountType":"Primary",
+     	"accountType":"Checking",
      	"amount":"1",
      	"cron":"*/2 * * * * ?"
      }
@@ -174,7 +174,7 @@ Online Banking system.
     ```json
     {
         "amount": "6",
-        "accountType": "Primary",
+        "accountType": "Checking",
         "targetUserName":"kobe73er"
     }
     ```
