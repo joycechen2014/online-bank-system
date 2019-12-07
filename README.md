@@ -16,6 +16,7 @@ Online Banking system.
         - View and search Transactions - for credits/debits/checks/fees - up to  last 18 months
         - (Admin only) - Add transactions - such as manual refunds on fees
         - Deploy API to **AWS in an Auto Scaled EC2 Cluster** with Load Balancer
+	- Deploy API to AWS as Docker Containers in Amazon Containers or EKS
         - Web or mobile UI
         
  ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/UseCase%20Diagram0.png)
