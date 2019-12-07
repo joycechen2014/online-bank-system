@@ -35,7 +35,7 @@ public class RecurringAccountsMoneyTransfer implements Job {
             User user = userService.findByUsername(principal.getName());
             logger.info("Recurring transfer money from " + transferFrom + " to " + transferTo);
             transactionService.betweenAccountsTransfer(transferFrom, transferTo, amount,
-                    user.getPrimaryAccount(),
+                    user.getCheckingAccount(),
                     user.getSavingsAccount());
         } catch (Exception e) {
             e.printStackTrace();

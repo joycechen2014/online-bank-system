@@ -1,14 +1,10 @@
 package com.hendisantika.onlinebanking.service.UserServiceImpl;
 
-import com.hendisantika.onlinebanking.entity.PrimaryAccount;
-import com.hendisantika.onlinebanking.entity.PrimaryTransaction;
-import com.hendisantika.onlinebanking.entity.Recipient;
-import com.hendisantika.onlinebanking.entity.SavingsAccount;
-import com.hendisantika.onlinebanking.entity.SavingsTransaction;
-import com.hendisantika.onlinebanking.entity.User;
+import com.hendisantika.onlinebanking.entity.*;
+import com.hendisantika.onlinebanking.entity.CheckingAccount;
 import com.hendisantika.onlinebanking.exception.InsufficientBalanceException;
-import com.hendisantika.onlinebanking.repository.PrimaryAccountDao;
-import com.hendisantika.onlinebanking.repository.PrimaryTransactionDao;
+import com.hendisantika.onlinebanking.repository.CheckingAccountDao;
+import com.hendisantika.onlinebanking.repository.CheckingTransactionDao;
 import com.hendisantika.onlinebanking.repository.RecipientDao;
 import com.hendisantika.onlinebanking.repository.SavingsAccountDao;
 import com.hendisantika.onlinebanking.repository.SavingsTransactionDao;
@@ -34,13 +30,13 @@ public class TransactionServiceImpl implements TransactionService {
   private UserService userService;
 
   @Autowired
-  private PrimaryTransactionDao primaryTransactionDao;
+  private CheckingTransactionDao checkingTransactionDao;
 
   @Autowired
   private SavingsTransactionDao savingsTransactionDao;
 
   @Autowired
-  private PrimaryAccountDao primaryAccountDao;
+  private CheckingAccountDao primaryAccountDao;
 
   @Autowired
   private SavingsAccountDao savingsAccountDao;
@@ -49,12 +45,12 @@ public class TransactionServiceImpl implements TransactionService {
   private RecipientDao recipientDao;
 
 
-  public List<PrimaryTransaction> findPrimaryTransactionList(String username) {
+  public List<CheckingTransaction> findCheckingTransactionList(String username) {
     User user = userService.findByUsername(username);
-    List<PrimaryTransaction> primaryTransactionList = user.getPrimaryAccount()
-        .getPrimaryTransactionList();
+    List<CheckingTransaction> checkingTransactionList = user.getCheckingAccount()
+        .getCheckingTransactionList();
 
-    return primaryTransactionList;
+    return checkingTransactionList;
   }
 
   public List<SavingsTransaction> findSavingsTransactionList(String username) {
@@ -65,16 +61,16 @@ public class TransactionServiceImpl implements TransactionService {
     return savingsTransactionList;
   }
 
-  public void savePrimaryDepositTransaction(PrimaryTransaction primaryTransaction) {
-    primaryTransactionDao.save(primaryTransaction);
+  public void saveCheckingDepositTransaction(CheckingTransaction checkingTransaction) {
+    checkingTransactionDao.save(checkingTransaction);
   }
 
   public void saveSavingsDepositTransaction(SavingsTransaction savingsTransaction) {
     savingsTransactionDao.save(savingsTransaction);
   }
 
-  public void savePrimaryWithdrawTransaction(PrimaryTransaction primaryTransaction) {
-    primaryTransactionDao.save(primaryTransaction);
+  public void saveCheckingWithdrawTransaction(CheckingTransaction checkingTransaction) {
+    checkingTransactionDao.save(checkingTransaction);
   }
 
   public void saveSavingsWithdrawTransaction(SavingsTransaction savingsTransaction) {
@@ -82,28 +78,28 @@ public class TransactionServiceImpl implements TransactionService {
   }
 
   public void betweenAccountsTransfer(String transferFrom, String transferTo, String amount,
-      PrimaryAccount primaryAccount, SavingsAccount savingsAccount) throws Exception {
-    if (transferFrom.equalsIgnoreCase("Primary") && transferTo.equalsIgnoreCase("Savings")) {
-      primaryAccount
-          .setAccountBalance(primaryAccount.getAccountBalance().subtract(new BigDecimal(amount)));
+                                      CheckingAccount checkingAccount, SavingsAccount savingsAccount) throws Exception {
+    if (transferFrom.equalsIgnoreCase("Checking") && transferTo.equalsIgnoreCase("Savings")) {
+      checkingAccount
+          .setAccountBalance(checkingAccount.getAccountBalance().subtract(new BigDecimal(amount)));
       savingsAccount
           .setAccountBalance(savingsAccount.getAccountBalance().add(new BigDecimal(amount)));
-      primaryAccountDao.save(primaryAccount);
+      primaryAccountDao.save(checkingAccount);
       savingsAccountDao.save(savingsAccount);
 
       Date date = new Date();
 
-      PrimaryTransaction primaryTransaction = new PrimaryTransaction(date,
+      CheckingTransaction checkingTransaction = new CheckingTransaction(date,
           "Between account transfer from " + transferFrom + " to " + transferTo, "Account",
-          "Finished", Double.parseDouble(amount), primaryAccount.getAccountBalance(),
-          primaryAccount);
-      primaryTransactionDao.save(primaryTransaction);
-    } else if (transferFrom.equalsIgnoreCase("Savings") && transferTo.equalsIgnoreCase("Primary")) {
-      primaryAccount
-          .setAccountBalance(primaryAccount.getAccountBalance().add(new BigDecimal(amount)));
+          "Finished", Double.parseDouble(amount), checkingAccount.getAccountBalance(),
+              checkingAccount);
+      checkingTransactionDao.save(checkingTransaction);
+    } else if (transferFrom.equalsIgnoreCase("Savings") && transferTo.equalsIgnoreCase("Checking")) {
+      checkingAccount
+          .setAccountBalance(checkingAccount.getAccountBalance().add(new BigDecimal(amount)));
       savingsAccount
           .setAccountBalance(savingsAccount.getAccountBalance().subtract(new BigDecimal(amount)));
-      primaryAccountDao.save(primaryAccount);
+      primaryAccountDao.save(checkingAccount);
       savingsAccountDao.save(savingsAccount);
 
       Date date = new Date();
@@ -145,31 +141,31 @@ public class TransactionServiceImpl implements TransactionService {
   }
 
   public void toSomeoneElseTransfer(Recipient recipient, String accountType, String amount,
-      PrimaryAccount primaryAccount, SavingsAccount savingsAccount)
+                                    CheckingAccount checkingAccount, SavingsAccount savingsAccount)
       throws InsufficientBalanceException {
 
-      if (accountType.equalsIgnoreCase("Primary")) {
+      if (accountType.equalsIgnoreCase("Checking")) {
 
-        BigDecimal subtractResult = primaryAccount.getAccountBalance()
+        BigDecimal subtractResult = checkingAccount.getAccountBalance()
             .subtract(new BigDecimal(amount));
 
         if (subtractResult.compareTo(BigDecimal.ZERO) != -1) {
-          primaryAccount
+          checkingAccount
               .setAccountBalance(subtractResult);
-          primaryAccountDao.save(primaryAccount);
+          primaryAccountDao.save(checkingAccount);
           Date date = new Date();
 
-          PrimaryTransaction primaryTransaction = new PrimaryTransaction(date,
+          CheckingTransaction checkingTransaction = new CheckingTransaction(date,
               "Transfer to recipient " + recipient.getName(), "Transfer", "Finished",
-              Double.parseDouble(amount), primaryAccount.getAccountBalance(), primaryAccount);
-          primaryTransactionDao.save(primaryTransaction);
+              Double.parseDouble(amount), checkingAccount.getAccountBalance(), checkingAccount);
+          checkingTransactionDao.save(checkingTransaction);
         } else {
           throw new InsufficientBalanceException("Insufficient Balance!");
         }
 
 
       } else if (accountType.equalsIgnoreCase("Savings")) {
-        BigDecimal subtractResult = primaryAccount.getAccountBalance()
+        BigDecimal subtractResult = checkingAccount.getAccountBalance()
             .subtract(new BigDecimal(amount));
 
         if (subtractResult.compareTo(BigDecimal.ZERO) != -1) {

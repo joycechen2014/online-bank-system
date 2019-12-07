@@ -1,6 +1,6 @@
 package com.hendisantika.onlinebanking.resource;
 
-import com.hendisantika.onlinebanking.entity.PrimaryTransaction;
+import com.hendisantika.onlinebanking.entity.CheckingTransaction;
 import com.hendisantika.onlinebanking.entity.SavingsTransaction;
 import com.hendisantika.onlinebanking.entity.User;
 import com.hendisantika.onlinebanking.service.TransactionService;
@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api")
-@PreAuthorize("hasRole('ADMIN')")
+//@PreAuthorize("hasRole('ADMIN')")
 public class UserResource {
 
   @Autowired
@@ -36,10 +36,10 @@ public class UserResource {
   public List<User> userList() {
     return userService.findUserList();
   }
-  @RequestMapping(value = "/user/primary/transaction", method = RequestMethod.GET)
-  public List<PrimaryTransaction> getPrimaryTransactionList(
+  @RequestMapping(value = "/user/checking/transaction", method = RequestMethod.GET)
+  public List<CheckingTransaction> getcheckingTransactionList(
       @RequestParam("username") String username) {
-    return transactionService.findPrimaryTransactionList(username);
+    return transactionService.findCheckingTransactionList(username);
   }
 
   @RequestMapping(value = "/user/savings/transaction", method = RequestMethod.GET)
@@ -48,52 +48,52 @@ public class UserResource {
     return transactionService.findSavingsTransactionList(username);
   }
 
-  @RequestMapping(value= "/primarytransaction/searchresult", method = RequestMethod.GET)
-  public List<PrimaryTransaction> searchPrimaryTransactionList(
+  @RequestMapping(value= "/checkingtransaction/searchresult", method = RequestMethod.GET)
+  public List<CheckingTransaction> searchcheckingTransactionList(
           @RequestParam(value="username") String username,
           @RequestParam(value="date", required=false) Date date,
           @RequestParam(value="type", required=false) String type,
           @RequestParam(value="status", required=false) String status,
           @RequestParam(value="amount", required=false) Double amount) {
-    List<PrimaryTransaction> allPrimaryTransaction = transactionService.findPrimaryTransactionList(username);
+    List<CheckingTransaction> allCheckingTransaction = transactionService.findCheckingTransactionList(username);
     if (date != null) {
-      List<PrimaryTransaction> primaryTransactions1 = new ArrayList<>();
-      for (PrimaryTransaction transaction : allPrimaryTransaction) {
+      List<CheckingTransaction> checkingTransactions1 = new ArrayList<>();
+      for (CheckingTransaction transaction : allCheckingTransaction) {
         if (transaction.getDate() == date) {
-          primaryTransactions1.add(transaction);
+          checkingTransactions1.add(transaction);
         }
       }
-      allPrimaryTransaction = primaryTransactions1;
+      allCheckingTransaction = checkingTransactions1;
     }
     if (type != null) {
-      List<PrimaryTransaction> primaryTransactions2 = new ArrayList<>();
-      for (PrimaryTransaction transaction : allPrimaryTransaction) {
+      List<CheckingTransaction> checkingTransactions2 = new ArrayList<>();
+      for (CheckingTransaction transaction : allCheckingTransaction) {
         if (transaction.getType().equals(type)) {
-          primaryTransactions2.add(transaction);
+          checkingTransactions2.add(transaction);
         }
       }
-      allPrimaryTransaction = primaryTransactions2;
+      allCheckingTransaction = checkingTransactions2;
     }
     if (status != null) {
-      List<PrimaryTransaction> primaryTransactions3 = new ArrayList<>();
-      for (PrimaryTransaction transaction : allPrimaryTransaction) {
+      List<CheckingTransaction> checkingTransactions3 = new ArrayList<>();
+      for (CheckingTransaction transaction : allCheckingTransaction) {
         if (transaction.getStatus().equals(status)) {
-          primaryTransactions3.add(transaction);
+          checkingTransactions3.add(transaction);
         }
       }
-      allPrimaryTransaction = primaryTransactions3;
+      allCheckingTransaction = checkingTransactions3;
     }
     if (amount != null) {
-      List<PrimaryTransaction> primaryTransactions4 = new ArrayList<>();
-      for (PrimaryTransaction transaction : allPrimaryTransaction) {
+      List<CheckingTransaction> checkingTransactions4 = new ArrayList<>();
+      for (CheckingTransaction transaction : allCheckingTransaction) {
         if (transaction.getAmount() == amount) {
-          primaryTransactions4.add(transaction);
+          checkingTransactions4.add(transaction);
         }
       }
-      allPrimaryTransaction = primaryTransactions4;
+      allCheckingTransaction = checkingTransactions4;
     }
 
-            return allPrimaryTransaction;
+            return allCheckingTransaction;
   }
   
   @RequestMapping(value= "/savingstransaction/searchresult", method = RequestMethod.GET)

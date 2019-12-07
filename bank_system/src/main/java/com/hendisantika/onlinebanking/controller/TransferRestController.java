@@ -12,7 +12,6 @@ import org.quartz.SchedulerException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -69,7 +68,7 @@ public class TransferRestController {
     try {
       transactionService
           .toSomeoneElseTransfer(recipient, payload.getAccountType(), payload.getAmount(),
-              user.getPrimaryAccount(),
+              user.getCheckingAccount(),
               user.getSavingsAccount());
     } catch (InsufficientBalanceException e) {
       e.printStackTrace();
@@ -115,7 +114,7 @@ public class TransferRestController {
   public Result TriggerOnetimeBetweenAccounts(@RequestBody AccountsMoneyTransferDTO payload, Principal principal) {
     User user = userService.findByUsername(principal.getName());
     try {transactionService.betweenAccountsTransfer(payload.getTransferFrom(), payload.getTransferTo(), payload.getAmount(),
-            user.getPrimaryAccount(),
+            user.getCheckingAccount(),
             user.getSavingsAccount());
     } catch (Exception e) {
       e.printStackTrace();

@@ -10,7 +10,7 @@ import javax.persistence.*;
  * template use File | Settings | File Templates.
  */
 @Entity
-public class PrimaryAccount {
+public class CheckingAccount {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,9 +20,9 @@ public class PrimaryAccount {
   @Column(name = "enabled", columnDefinition="BIT")
   private Boolean enabled;
 
-  @OneToMany(mappedBy = "primaryAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "checkingAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   @JsonIgnore
-  private List<PrimaryTransaction> primaryTransactionList;
+  private List<CheckingTransaction> checkingTransactionList;
 
   public Long getId() {
     return id;
@@ -48,12 +48,12 @@ public class PrimaryAccount {
     this.accountBalance = accountBalance;
   }
 
-  public List<PrimaryTransaction> getPrimaryTransactionList() {
-    return primaryTransactionList;
+  public List<CheckingTransaction> getCheckingTransactionList() {
+    return checkingTransactionList;
   }
 
-  public void setPrimaryTransactionList(List<PrimaryTransaction> primaryTransactionList) {
-    this.primaryTransactionList = primaryTransactionList;
+  public void setCheckingTransactionList(List<CheckingTransaction> checkingTransactionList) {
+    this.checkingTransactionList = checkingTransactionList;
   }
 
   public Boolean isEnabled() {

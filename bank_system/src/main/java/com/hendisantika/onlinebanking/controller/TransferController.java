@@ -1,28 +1,17 @@
 package com.hendisantika.onlinebanking.controller;
 
-import com.hendisantika.onlinebanking.entity.ApiResultEnum;
-import com.hendisantika.onlinebanking.entity.PrimaryAccount;
-import com.hendisantika.onlinebanking.entity.Recipient;
-import com.hendisantika.onlinebanking.entity.Result;
-import com.hendisantika.onlinebanking.entity.SavingsAccount;
-import com.hendisantika.onlinebanking.entity.User;
+import com.hendisantika.onlinebanking.entity.*;
+import com.hendisantika.onlinebanking.entity.CheckingAccount;
 import com.hendisantika.onlinebanking.exception.InsufficientBalanceException;
 import com.hendisantika.onlinebanking.service.TransactionService;
 import com.hendisantika.onlinebanking.service.UserService;
 import java.security.Principal;
 import java.util.List;
-import org.quartz.CronScheduleBuilder;
-import org.quartz.JobBuilder;
-import org.quartz.JobDetail;
-import org.quartz.Scheduler;
-import org.quartz.SchedulerException;
-import org.quartz.Trigger;
-import org.quartz.TriggerBuilder;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -61,10 +50,10 @@ public class TransferController {
       Principal principal
   ) throws Exception {
     User user = userService.findByUsername(principal.getName());
-    PrimaryAccount primaryAccount = user.getPrimaryAccount();
+    CheckingAccount checkingAccount = user.getCheckingAccount();
     SavingsAccount savingsAccount = user.getSavingsAccount();
     transactionService
-        .betweenAccountsTransfer(transferFrom, transferTo, amount, primaryAccount, savingsAccount);
+        .betweenAccountsTransfer(transferFrom, transferTo, amount, checkingAccount, savingsAccount);
 
     return "redirect:/userFront";
   }
@@ -139,7 +128,7 @@ public class TransferController {
     Recipient recipient = transactionService.findRecipientByName(recipientName);
     try {
       transactionService
-          .toSomeoneElseTransfer(recipient, accountType, amount, user.getPrimaryAccount(),
+          .toSomeoneElseTransfer(recipient, accountType, amount, user.getCheckingAccount(),
               user.getSavingsAccount());
     } catch (InsufficientBalanceException e) {
       Result.error(ApiResultEnum.INSUFFICIENT_BALANCE_ERROR);

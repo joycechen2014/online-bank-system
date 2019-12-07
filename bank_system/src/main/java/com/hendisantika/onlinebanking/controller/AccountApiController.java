@@ -1,8 +1,6 @@
 package com.hendisantika.onlinebanking.controller;
 
 import com.google.common.base.Preconditions;
-import com.hendisantika.onlinebanking.entity.PrimaryAccount;
-import com.hendisantika.onlinebanking.entity.SavingsAccount;
 import com.hendisantika.onlinebanking.entity.User;
 import com.hendisantika.onlinebanking.repository.RoleDao;
 import com.hendisantika.onlinebanking.repository.UserDao;
@@ -12,8 +10,6 @@ import com.hendisantika.onlinebanking.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.Column;
-import javax.persistence.OneToOne;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -58,14 +54,14 @@ public class AccountApiController {
         }
          return "";
     }
-    @PutMapping("api/addPrimaryAcc/{id}")
-    public String addPrimaryAcc(@PathVariable( "id" ) String id) {
+    @PutMapping("api/addCheckingAcc/{id}")
+    public String addCheckingAcc(@PathVariable( "id" ) String id) {
         //User user = new User();
         Preconditions.checkNotNull(id);
         //User user = userService.findByuserId(id);
         User user = userDao.findByUsername(id);
 
-        user.setPrimaryAccount(accountService.createPrimaryAccount());
+        user.setCheckingAccount(accountService.createPrimaryAccount());
 
 
         userDao.save(user);
@@ -77,15 +73,15 @@ public class AccountApiController {
        // User user = new User();
         User user = userService.findByuserId(Long.parseLong(id));
         //User user = userService.findByUsername(id);
-        //user.setPrimaryAccount(accountService.createPrimaryAccount());
+        //user.setCheckingAccount(accountService.createPrimaryAccount());
         //user.setSavingsAccount(accountService.createSavingsAccount());
 
        // userDao.save(user);
         return user.toString();
     }
 
-    @PutMapping("api/addCheckingAcc/{id}")
-    public String addCheckingAcc(@PathVariable String id) {
+    @PutMapping("api/addSavingsAcc/{id}")
+    public String addSavingsAcc(@PathVariable String id) {
         // User user = new User();
         //User user = userService.findByuserId(Long.parseLong(id));
         User user = userService.findByUsername(id);
@@ -106,7 +102,7 @@ public class AccountApiController {
         //user.setSavingsAccount(accountService.createSavingsAccount());
 
         //userDao.save(user);
-        return "PrimaryBalance : " + user.getPrimaryAccount().getAccountBalance().toString() + '\'' +
+        return "CheckingBalance : " + user.getCheckingAccount().getAccountBalance().toString() + '\'' +
                 "SavingBalancd : " + user.getSavingsAccount().getAccountBalance().toString();
     }
 
@@ -115,8 +111,8 @@ public class AccountApiController {
         Long userId = Long.parseLong(uid);
         Long accountId = Long.parseLong(aid);
         User user = userService.findByuserId(userId);
-        if ( (user.getPrimaryAccount() != null) && (user.getPrimaryAccount().getId() == accountId)) {
-            user.setPrimaryAccount(null);
+        if ( (user.getCheckingAccount() != null) && (user.getCheckingAccount().getId() == accountId)) {
+            user.setCheckingAccount(null);
             userDao.save(user);
         } else {
             return "{\"error\":\"no such account\"}";

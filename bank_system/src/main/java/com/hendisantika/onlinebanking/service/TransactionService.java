@@ -1,10 +1,7 @@
 package com.hendisantika.onlinebanking.service;
 
-import com.hendisantika.onlinebanking.entity.PrimaryAccount;
-import com.hendisantika.onlinebanking.entity.PrimaryTransaction;
-import com.hendisantika.onlinebanking.entity.Recipient;
-import com.hendisantika.onlinebanking.entity.SavingsAccount;
-import com.hendisantika.onlinebanking.entity.SavingsTransaction;
+import com.hendisantika.onlinebanking.entity.*;
+import com.hendisantika.onlinebanking.entity.CheckingAccount;
 import com.hendisantika.onlinebanking.exception.InsufficientBalanceException;
 import java.security.Principal;
 import java.util.List;
@@ -16,20 +13,20 @@ import java.util.List;
  */
 public interface TransactionService {
 
-  List<PrimaryTransaction> findPrimaryTransactionList(String username);
+  List<CheckingTransaction> findCheckingTransactionList(String username);
 
   List<SavingsTransaction> findSavingsTransactionList(String username);
 
-  void savePrimaryDepositTransaction(PrimaryTransaction primaryTransaction);
+  void saveCheckingDepositTransaction(CheckingTransaction checkingTransaction);
 
   void saveSavingsDepositTransaction(SavingsTransaction savingsTransaction);
 
-  void savePrimaryWithdrawTransaction(PrimaryTransaction primaryTransaction);
+  void saveCheckingWithdrawTransaction(CheckingTransaction checkingTransaction);
 
   void saveSavingsWithdrawTransaction(SavingsTransaction savingsTransaction);
 
   void betweenAccountsTransfer(String transferFrom, String transferTo, String amount,
-      PrimaryAccount primaryAccount, SavingsAccount savingsAccount) throws Exception;
+                               CheckingAccount checkingAccount, SavingsAccount savingsAccount) throws Exception;
 
   List<Recipient> findRecipientList(Principal principal);
 
@@ -41,5 +38,5 @@ public interface TransactionService {
   void deleteRecipientByName(String recipientName);
 
   void toSomeoneElseTransfer(Recipient recipient, String accountType, String amount,
-      PrimaryAccount primaryAccount, SavingsAccount savingsAccount) throws InsufficientBalanceException;
+                             CheckingAccount checkingAccount, SavingsAccount savingsAccount) throws InsufficientBalanceException;
 }
