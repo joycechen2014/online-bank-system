@@ -37,6 +37,7 @@ Online Banking system.
     ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/delete.png)
     ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/delete_savings.png)
     ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/delete_checking.png)
+    
 ## APIs:
 >Register new user and add account
 - **/api/addUser**
