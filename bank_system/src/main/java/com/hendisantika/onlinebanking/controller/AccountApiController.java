@@ -59,11 +59,11 @@ public class AccountApiController {
          return "";
     }
     @PutMapping("api/addPrimaryAcc/{id}")
-    public String addPrimaryAcc(@PathVariable( "id" ) Long id) {
+    public String addPrimaryAcc(@PathVariable( "id" ) String id) {
         //User user = new User();
         Preconditions.checkNotNull(id);
-        User user = userService.findByuserId(id);
-        //user = userDao.findByUserId(Long.parseLong(id));
+        //User user = userService.findByuserId(id);
+        User user = userDao.findByUsername(id);
 
         user.setPrimaryAccount(accountService.createPrimaryAccount());
 
@@ -87,8 +87,8 @@ public class AccountApiController {
     @PutMapping("api/addCheckingAcc/{id}")
     public String addCheckingAcc(@PathVariable String id) {
         // User user = new User();
-        User user = userService.findByuserId(Long.parseLong(id));
-        //User user = userService.findByUsername(id);
+        //User user = userService.findByuserId(Long.parseLong(id));
+        User user = userService.findByUsername(id);
 
         user.setSavingsAccount(accountService.createSavingsAccount());
 

@@ -42,7 +42,7 @@ public class AccountServiceImpl implements AccountService {
   public PrimaryAccount createPrimaryAccount() {
     PrimaryAccount primaryAccount = new PrimaryAccount();
     primaryAccount.setAccountBalance(new BigDecimal(0.0));
-    primaryAccount.setAccountNumber(accountGen());
+    primaryAccount.setAccountNumber(accountGenChecking());
     primaryAccount.enable();
 
     primaryAccountDao.save(primaryAccount);
@@ -63,7 +63,7 @@ public class AccountServiceImpl implements AccountService {
   public SavingsAccount createSavingsAccount() {
     SavingsAccount savingsAccount = new SavingsAccount();
     savingsAccount.setAccountBalance(new BigDecimal(0.0));
-    savingsAccount.setAccountNumber(accountGen());
+    savingsAccount.setAccountNumber(accountGenSavings());
     savingsAccount.enable();
 
     savingsAccountDao.save(savingsAccount);
@@ -173,10 +173,13 @@ public class AccountServiceImpl implements AccountService {
   }
 
 
-  private int accountGen() {
+  private int accountGenSavings() {
     int currentAccountNumber  = savingsAccountDao.getMaxAccountNumber();
     return ++currentAccountNumber;
   }
-
+  private int accountGenChecking() {
+    int currentAccountNumber  = primaryAccountDao.getMaxAccountNumber();
+    return ++currentAccountNumber;
+  }
 
 }
