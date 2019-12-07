@@ -33,6 +33,10 @@ Online Banking system.
     ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/transfer_account_reccuring.jpg)
    - View and search  Transactions
     ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/transaction.jpg)
+   - Delete accounts
+    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/delete.jpg)
+    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/delete_savings.jpg)
+    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/delete_checking.jpg)
 ## APIs:
 >Register new user and add account
 - **/api/addUser**
