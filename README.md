@@ -31,6 +31,12 @@ Online Banking system.
     ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/transfer%20account.jpg)
    - Transfer between accounts - recurring
     ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/transfer_account_reccuring.jpg)
+   - Transfer external - one time
+    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/Transfer_external_onetime.jpg)
+   - Transfer external - recurring
+    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/transfer_external_recurring.jpg)
+   - Transfer external - recurring shutdown
+    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/transfer_external_recurring_shutdown.jpg)
    - View and search  Transactions
     ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/transaction.jpg)
    - Delete accounts
