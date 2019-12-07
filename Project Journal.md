@@ -94,10 +94,13 @@ WEEK #3 (Nov25 - Nov29)
    - finished the api of one-time tranfer external(one-time Bill payment for external payees), recurring transfer external (recurring Bill payment for external payees) and admin refund
    - XP Core Values(Communication): By communicating with other team members 
    - Unit testing
+   - Debugging
 ```
 ```
 WEEK #4 (Dec2 - Dec6) 
    - Integerate testing, System testing
+   - practising demo
+   - Writing reports
 ```
 
 ## Weekly Scrum Report -Lijuan Hou
