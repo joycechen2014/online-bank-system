@@ -183,3 +183,11 @@ Online Banking system.
         * http://localhost:8080/api/deleteSavingsAcc/{userId}/{accountId}
 	* http://localhost:8080/api/deleteCheckingAcc/{userId}/{accountId}
     * Method: Delete
+
+## Deploy to AWS
+* Guidance
+
+https://aws.amazon.com/blogs/devops/deploying-a-spring-boot-application-on-aws-using-aws-elastic-beanstalk/
+
+* Result
+    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/aws.png)
