@@ -100,7 +100,7 @@ WEEK #4 (Dec2 - Dec6)
    - Integerate testing, System testing
 ```
 
-## Weekly Scrum Report - Junyan Wang
+## Weekly Scrum Report -Lijuan Hou
 ```
 WEEK #1 (Nov11 - Nov15) 
    - Had first meeting with teammates about the project and decided to use Spring Boot as the frame work.
