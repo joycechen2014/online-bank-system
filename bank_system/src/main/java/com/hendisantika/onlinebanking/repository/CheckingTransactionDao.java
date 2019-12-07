@@ -1,6 +1,7 @@
 package com.hendisantika.onlinebanking.repository;
 
-import com.hendisantika.onlinebanking.entity.PrimaryTransaction;
+import com.hendisantika.onlinebanking.entity.CheckingTransaction;
+
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
@@ -9,7 +10,7 @@ import org.springframework.data.repository.CrudRepository;
  * hendisantika@gmail.com Telegram : @hendisantika34 Date: 08/08/18 Time: 06.05 To change this
  * template use File | Settings | File Templates.
  */
-public interface PrimaryTransactionDao extends CrudRepository<PrimaryTransaction, Long> {
+public interface CheckingTransactionDao extends CrudRepository<CheckingTransaction, Long> {
 
-  List<PrimaryTransaction> findAll();
+  List<CheckingTransaction> findAll();
 }

@@ -11,7 +11,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
 import org.quartz.SchedulerContext;
 import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +43,7 @@ public class RecurringTransferMoneyJob implements Job {
 //      logger.info(
 //          "recurring transfer money from " + user.getUsername() + " to " + recipient.getName());
       transactionService
-          .toSomeoneElseTransfer(recipient, accountType, amount, user.getPrimaryAccount(),
+          .toSomeoneElseTransfer(recipient, accountType, amount, user.getCheckingAccount(),
               user.getSavingsAccount());
     } catch (SchedulerException | InsufficientBalanceException e) {
       e.printStackTrace();

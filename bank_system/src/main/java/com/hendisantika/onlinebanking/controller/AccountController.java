@@ -1,7 +1,7 @@
 package com.hendisantika.onlinebanking.controller;
 
-import com.hendisantika.onlinebanking.entity.PrimaryAccount;
-import com.hendisantika.onlinebanking.entity.PrimaryTransaction;
+import com.hendisantika.onlinebanking.entity.CheckingAccount;
+import com.hendisantika.onlinebanking.entity.CheckingTransaction;
 import com.hendisantika.onlinebanking.entity.SavingsAccount;
 import com.hendisantika.onlinebanking.entity.SavingsTransaction;
 import com.hendisantika.onlinebanking.entity.User;
@@ -37,16 +37,16 @@ public class AccountController {
 
   @RequestMapping("/primaryAccount")
   public String primaryAccount(Model model, Principal principal) {
-    List<PrimaryTransaction> primaryTransactionList = transactionService
-        .findPrimaryTransactionList(principal.getName());
+    List<CheckingTransaction> checkingTransactionList = transactionService
+        .findCheckingTransactionList(principal.getName());
 
     User user = userService.findByUsername(principal.getName());
-    PrimaryAccount primaryAccount = user.getPrimaryAccount();
+    CheckingAccount checkingAccount = user.getCheckingAccount();
 
-    model.addAttribute("primaryAccount", primaryAccount);
-    model.addAttribute("primaryTransactionList", primaryTransactionList);
+    model.addAttribute("checkingAccount", checkingAccount);
+    model.addAttribute("checkingTransactionList", checkingTransactionList);
 
-    return "primaryAccount";
+    return "checkingAccount";
   }
 
   @RequestMapping("/savingsAccount")

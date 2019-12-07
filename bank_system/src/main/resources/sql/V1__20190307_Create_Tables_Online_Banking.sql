@@ -17,11 +17,11 @@ CREATE TABLE `appointment` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
--- Table structure for table `primary_account`
+-- Table structure for table `checking_account`
 --
 
-DROP TABLE IF EXISTS `primary_account`;
-CREATE TABLE `primary_account` (
+DROP TABLE IF EXISTS `checking_account`;
+CREATE TABLE `checking_account` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `account_balance` decimal(19,2) DEFAULT NULL,
   `account_number` int(11) NOT NULL,
@@ -30,13 +30,13 @@ CREATE TABLE `primary_account` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
--- Table structure for table `primary_transaction`
+-- Table structure for table `checking_transaction`
 --
 
-DROP TABLE IF EXISTS `primary_transaction`;
+DROP TABLE IF EXISTS `checking_transaction`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `primary_transaction` (
+CREATE TABLE `checking_transaction` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `amount` double NOT NULL,
   `available_balance` decimal(19,2) DEFAULT NULL,
@@ -44,10 +44,10 @@ CREATE TABLE `primary_transaction` (
   `description` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
-  `primary_account_id` bigint(20) DEFAULT NULL,
+  `checking_account_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK643wtfdx6y0e093wlc09csehn` (`primary_account_id`),
-  CONSTRAINT `FK643wtfdx6y0e093wlc09csehn` FOREIGN KEY (`primary_account_id`) REFERENCES `primary_account` (`id`)
+  KEY `FK643wtfdx6y0e093wlc09csehn` (`checking_account_id`),
+  CONSTRAINT `FK643wtfdx6y0e093wlc09csehn` FOREIGN KEY (`checking_account_id`) REFERENCES `checking_account` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
@@ -78,7 +78,7 @@ DROP TABLE IF EXISTS `role`;
 CREATE TABLE `role` (
   `role_id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`role_id`)
+  PRIMARY KEY(`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -125,13 +125,13 @@ CREATE TABLE `user` (
   `password` varchar(255) DEFAULT NULL,
   `phone` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
-  `primary_account_id` bigint(20) DEFAULT NULL,
+  `checking_account_id` bigint(20) DEFAULT NULL,
   `savings_account_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `UK_ob8kqyqqgmefl0aco34akdtpe` (`email`),
-  KEY `FKbj0uoj9i40dory8w4t5ojyb9n` (`primary_account_id`),
+  KEY `FKbj0uoj9i40dory8w4t5ojyb9n` (`checking_account_id`),
   KEY `FKihums7d3g5cv9ehminfs1539e` (`savings_account_id`),
-  CONSTRAINT `FKbj0uoj9i40dory8w4t5ojyb9n` FOREIGN KEY (`primary_account_id`) REFERENCES `primary_account` (`id`),
+  CONSTRAINT `FKbj0uoj9i40dory8w4t5ojyb9n` FOREIGN KEY (`checking_account_id`) REFERENCES `checking_account` (`id`),
   CONSTRAINT `FKihums7d3g5cv9ehminfs1539e` FOREIGN KEY (`savings_account_id`) REFERENCES `savings_account` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 

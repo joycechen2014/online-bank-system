@@ -14,10 +14,10 @@ UNLOCK TABLES;
 -- Dumping data for table `primary_account`
 --
 
-LOCK TABLES `primary_account` WRITE;
-/*!40000 ALTER TABLE `primary_account` DISABLE KEYS */;
-INSERT INTO `primary_account` VALUES (1,1700.00,11223146,TRUE),(2,0.00,11223150,TRUE);
-/*!40000 ALTER TABLE `primary_account` ENABLE KEYS */;
+LOCK TABLES `checking_account` WRITE;
+/*!40000 ALTER TABLE `checking_account` DISABLE KEYS */;
+INSERT INTO `checking_account` VALUES (1,1700.00,11223146,TRUE),(2,0.00,11223150,TRUE);
+/*!40000 ALTER TABLE `checking_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -25,9 +25,9 @@ UNLOCK TABLES;
 -- Dumping data for table `primary_transaction`
 --
 
-LOCK TABLES `primary_transaction` WRITE;
-/*!40000 ALTER TABLE `primary_transaction` DISABLE KEYS */;
-INSERT INTO `primary_transaction` VALUES (1,5000,5000.00,'2019-01-13 00:57:16','Deposit to Primary Account','Finished','Account',1),
+LOCK TABLES `checking_transaction` WRITE;
+/*!40000 ALTER TABLE `checking_transaction` DISABLE KEYS */;
+INSERT INTO `checking_transaction` VALUES (1,5000,5000.00,'2019-01-13 00:57:16','Deposit to Primary Account','Finished','Account',1),
 (2,1500,3500.00,'2019-01-13 00:57:31','Withdraw from Primary Account','Finished','Account',1),
 (3,1300,2200.00,'2019-01-13 00:58:03','Between account transfer from Primary to Savings','Finished','Account',1),
 (4,500,1700.00,'2019-01-13 00:59:08','Transfer to recipient Mr. Tomson','Finished','Transfer',1),
@@ -35,7 +35,7 @@ INSERT INTO `primary_transaction` VALUES (1,5000,5000.00,'2019-01-13 00:57:16','
 (6,400,2800.00,'2019-01-13 01:11:46','Withdraw from Primary Account','Finished','Account',1),
 (7,2300,2000.00,'2019-01-13 01:13:48','Between account transfer from Primary to Savings','Finished','Account',1),
 (8,300,1700.00,'2019-01-13 01:14:14','Transfer to recipient TaxSystem','Finished','Transfer',1);
-/*!40000 ALTER TABLE `primary_transaction` ENABLE KEYS */;
+/*!40000 ALTER TABLE `checking_transaction` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

@@ -23,7 +23,7 @@
             </div>
             <div class="col-xs-6 text-right">
               <h1><i aria-hidden="true" class="fa fa-usd"></i> <span
-                  th:text="${primaryAccount.accountBalance}">...</span></h1>
+                  th:text="${checkingAccount.accountBalance}">...</span></h1>
             </div>
           </div>
         </div>
@@ -52,13 +52,13 @@
       </tr>
       </thead>
       <tbody>
-      <tr data-th-each="primaryTransaction : ${primaryTransactionList}">
-        <td data-th-text="${primaryTransaction.date}">...</td>
-        <td data-th-text="${primaryTransaction.description}">...</td>
-        <td data-th-text="${primaryTransaction.type}">...</td>
-        <td data-th-text="${primaryTransaction.status}">...</td>
-        <td data-th-text="${primaryTransaction.amount}">...</td>
-        <td data-th-text="${primaryTransaction.availableBalance}">...</td>
+      <tr data-th-each="checkingTransaction : ${checkingTransactionList}">
+        <td data-th-text="${checkingTransaction.date}">...</td>
+        <td data-th-text="${checkingTransaction.description}">...</td>
+        <td data-th-text="${checkingTransaction.type}">...</td>
+        <td data-th-text="${checkingTransaction.status}">...</td>
+        <td data-th-text="${checkingTransaction.amount}">...</td>
+        <td data-th-text="${checkingTransaction.availableBalance}">...</td>
       </tr>
       </tbody>
     </table>

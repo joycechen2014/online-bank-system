@@ -42,7 +42,7 @@ public class User implements UserDetails {
   private boolean enabled = true;
 
   @OneToOne
-  private PrimaryAccount primaryAccount;
+  private CheckingAccount checkingAccount;
 
   @OneToOne
   private SavingsAccount savingsAccount;
@@ -138,12 +138,12 @@ public class User implements UserDetails {
     this.password = password;
   }
 
-  public PrimaryAccount getPrimaryAccount() {
-    return primaryAccount;
+  public CheckingAccount getCheckingAccount() {
+    return checkingAccount;
   }
 
-  public void setPrimaryAccount(PrimaryAccount primaryAccount) {
-    this.primaryAccount = primaryAccount;
+  public void setCheckingAccount(CheckingAccount checkingAccount) {
+    this.checkingAccount = checkingAccount;
   }
 
   public SavingsAccount getSavingsAccount() {
@@ -168,7 +168,7 @@ public class User implements UserDetails {
        // ", recipientList=" + recipientList +
        // ", userRoles=" + userRoles +
         ",savingAccount" + this.getSavingsAccount()  + '\'' +
-            ",PrimaryAccount" + this.getPrimaryAccount()  + '\'' +
+            ",CheckingAccount" + this.getCheckingAccount()  + '\'' +
             '}';
   }
 

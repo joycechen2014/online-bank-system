@@ -1,6 +1,6 @@
 package com.hendisantika.onlinebanking.controller;
 
-import com.hendisantika.onlinebanking.entity.PrimaryAccount;
+import com.hendisantika.onlinebanking.entity.CheckingAccount;
 import com.hendisantika.onlinebanking.entity.SavingsAccount;
 import com.hendisantika.onlinebanking.entity.User;
 import com.hendisantika.onlinebanking.repository.RoleDao;
@@ -77,10 +77,10 @@ public class HomeController {
   @GetMapping("/userFront")
   public String userFront(Principal principal, Model model) {
     User user = userService.findByUsername(principal.getName());
-    PrimaryAccount primaryAccount = user.getPrimaryAccount();
+    CheckingAccount checkingAccount = user.getCheckingAccount();
     SavingsAccount savingsAccount = user.getSavingsAccount();
 
-    model.addAttribute("primaryAccount", primaryAccount);
+    model.addAttribute("checkingAccount", checkingAccount);
     model.addAttribute("savingsAccount", savingsAccount);
 
     return "userFront";

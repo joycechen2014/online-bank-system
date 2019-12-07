@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
  * template use File | Settings | File Templates.
  */
 @Entity
-public class PrimaryTransaction {
+public class CheckingTransaction {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,22 +27,22 @@ public class PrimaryTransaction {
   private double amount;
   private BigDecimal availableBalance;
   @ManyToOne
-  @JoinColumn(name = "primary_account_id")
-  private PrimaryAccount primaryAccount;
+  @JoinColumn(name = "checking_account_id")
+  private CheckingAccount checkingAccount;
 
 
-  public PrimaryTransaction() {
+  public CheckingTransaction() {
   }
 
-  public PrimaryTransaction(Date date, String description, String type, String status,
-      double amount, BigDecimal availableBalance, PrimaryAccount primaryAccount) {
+  public CheckingTransaction(Date date, String description, String type, String status,
+                             double amount, BigDecimal availableBalance, CheckingAccount checkingAccount) {
     this.date = date;
     this.description = description;
     this.type = type;
     this.status = status;
     this.amount = amount;
     this.availableBalance = availableBalance;
-    this.primaryAccount = primaryAccount;
+    this.checkingAccount = checkingAccount;
   }
 
   public Long getId() {
@@ -101,12 +101,12 @@ public class PrimaryTransaction {
     this.availableBalance = availableBalance;
   }
 
-  public PrimaryAccount getPrimaryAccount() {
-    return primaryAccount;
+  public CheckingAccount getCheckingAccount() {
+    return checkingAccount;
   }
 
-  public void setPrimaryAccount(PrimaryAccount primaryAccount) {
-    this.primaryAccount = primaryAccount;
+  public void setCheckingAccount(CheckingAccount checkingAccount) {
+    this.checkingAccount = checkingAccount;
   }
 
 }
