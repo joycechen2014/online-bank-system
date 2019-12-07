@@ -59,7 +59,7 @@ Online Banking system.
 - **/recurring/transfer/start**  
 - **/recurring/transfer/shutdown** 
 >View and search transaction
-- **/api/primarytransaction/searchresult**
+- **/api/checkingtransaction/searchresult**
 - **/api/savingstransaction/searchresult**
 >Admin refund
 - **/admin/refund** 
@@ -83,27 +83,27 @@ Online Banking system.
         }  
     ```
  
-*   Add Primary Account and Savings Account. 
+*   Add Checking Account and Savings Account. 
      * URL: 
-       * Add Primary Accounts: http://localhost:8080/api/addPrimaryAcc/{id}
+       * Add Checking Accounts: http://localhost:8080/api/addCheckingAcc/{id}
        * Add Savings Accounts: http://localhost:8080/api/addCheckingAcc/{id}
        * Method: PUT
         * Params:
                * Required: User_id
                
-*   Deposit money to saving account or primary account 
+*   Deposit money to saving account or checking account 
      * URL: 
-       * Add Primary Accounts: http://localhost:8080/api/deposit/{accountType}/{amount}/{receiver}"
+       * Add Checking Accounts: http://localhost:8080/api/deposit/{accountType}/{amount}/{receiver}"
        * Method: PUT
         * Params:
-               * Required: AccountType (savings or primary),Amount,Receiver (username)       
+               * Required: AccountType (savings or checking),Amount,Receiver (username)       
 * Transfer between accounts - one time
      * URL: http://localhost:8080/onetime/transferbetweenaccounts
      * Method: POST
      * Params Example: transfer $10 from checking account to saving account one time
        ```json
        {
-		"transferFrom":"Primary",
+		"transferFrom":"Checking",
 		"transferTo":"Savings",
 		"amount":"10"
        }
@@ -114,7 +114,7 @@ Online Banking system.
      * Params Example: transfer $1 from checking account to saving account every 2 sec
 	```json
 	{
-	"transferFrom":"Primary",
+	"transferFrom":"Checking",
 	"transferTo":"Savings",
 	"amount":"1",
 	"cron":"*/2 * * * * ?"
