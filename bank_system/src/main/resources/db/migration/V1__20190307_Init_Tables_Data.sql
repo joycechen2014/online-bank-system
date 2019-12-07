@@ -49,13 +49,13 @@ INSERT INTO `appointment` VALUES (1,'','2019-01-25 14:01:00','Want to see someo
 UNLOCK TABLES;
 
 --
--- Table structure for table `primary_account`
+-- Table structure for table `checking_account`
 --
 
-DROP TABLE IF EXISTS `primary_account`;
+DROP TABLE IF EXISTS `checking_account`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `primary_account` (
+CREATE TABLE `checking_account` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `account_balance` decimal(19,2) DEFAULT NULL,
   `account_number` int(11) NOT NULL,
@@ -65,23 +65,23 @@ CREATE TABLE `primary_account` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `primary_account`
+-- Dumping data for table `checking_account`
 --
 
-LOCK TABLES `primary_account` WRITE;
-/*!40000 ALTER TABLE `primary_account` DISABLE KEYS */;
-INSERT INTO `primary_account` VALUES (1,1700.00,11223101,TRUE),(2,0.00,11223101,TRUE);
-/*!40000 ALTER TABLE `primary_account` ENABLE KEYS */;
+LOCK TABLES `checking_account` WRITE;
+/*!40000 ALTER TABLE `checking_account` DISABLE KEYS */;
+INSERT INTO `checking_account` VALUES (1,1700.00,11223101,TRUE),(2,0.00,11223101,TRUE);
+/*!40000 ALTER TABLE `checking_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `primary_transaction`
+-- Table structure for table `checking_transaction`
 --
 
-DROP TABLE IF EXISTS `primary_transaction`;
+DROP TABLE IF EXISTS `checking_transaction`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `primary_transaction` (
+CREATE TABLE `checking_transaction` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `amount` double NOT NULL,
   `available_balance` decimal(19,2) DEFAULT NULL,
@@ -89,20 +89,20 @@ CREATE TABLE `primary_transaction` (
   `description` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
-  `primary_account_id` bigint(20) DEFAULT NULL,
+  `checking_account_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK643wtfdx6y0e093wlc09csehn` (`primary_account_id`),
-  CONSTRAINT `FK643wtfdx6y0e093wlc09csehn` FOREIGN KEY (`primary_account_id`) REFERENCES `primary_account` (`id`)
+  KEY `FK643wtfdx6y0e093wlc09csehn` (`checking_account_id`),
+  CONSTRAINT `FK643wtfdx6y0e093wlc09csehn` FOREIGN KEY (`checking_account_id`) REFERENCES `checking_account` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `primary_transaction`
+-- Dumping data for table `checking_transaction`
 --
 
-LOCK TABLES `primary_transaction` WRITE;
-/*!40000 ALTER TABLE `primary_transaction` DISABLE KEYS */;
-INSERT INTO `primary_transaction` VALUES (1,5000,5000.00,'2019-01-13 00:57:16','Deposit to Primary Account','Finished','Account',1),
+LOCK TABLES `checking_transaction` WRITE;
+/*!40000 ALTER TABLE `checking_transaction` DISABLE KEYS */;
+INSERT INTO `checking_transaction` VALUES (1,5000,5000.00,'2019-01-13 00:57:16','Deposit to Primary Account','Finished','Account',1),
 (2,1500,3500.00,'2019-01-13 00:57:31','Withdraw from Primary Account','Finished','Account',1),
 (3,1300,2200.00,'2019-01-13 00:58:03','Between account transfer from Primary to Savings','Finished','Account',1),
 (4,500,1700.00,'2019-01-13 00:59:08','Transfer to recipient Mr. Tomson','Finished','Transfer',1),
@@ -110,7 +110,7 @@ INSERT INTO `primary_transaction` VALUES (1,5000,5000.00,'2019-01-13 00:57:16','
 (6,400,2800.00,'2019-01-13 01:11:46','Withdraw from Primary Account','Finished','Account',1),
 (7,2300,2000.00,'2019-01-13 01:13:48','Between account transfer from Primary to Savings','Finished','Account',1),
 (8,300,1700.00,'2019-01-13 01:14:14','Transfer to recipient TaxSystem','Finished','Transfer',1);
-/*!40000 ALTER TABLE `primary_transaction` ENABLE KEYS */;
+/*!40000 ALTER TABLE `checking_transaction` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -251,13 +251,13 @@ CREATE TABLE `user` (
   `password` varchar(255) DEFAULT NULL,
   `phone` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
-  `primary_account_id` bigint(20) DEFAULT NULL,
+  `checking_account_id` bigint(20) DEFAULT NULL,
   `savings_account_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `UK_ob8kqyqqgmefl0aco34akdtpe` (`email`),
-  KEY `FKbj0uoj9i40dory8w4t5ojyb9n` (`primary_account_id`),
+  KEY `FKbj0uoj9i40dory8w4t5ojyb9n` (`checking_account_id`),
   KEY `FKihums7d3g5cv9ehminfs1539e` (`savings_account_id`),
-  CONSTRAINT `FKbj0uoj9i40dory8w4t5ojyb9n` FOREIGN KEY (`primary_account_id`) REFERENCES `primary_account` (`id`),
+  CONSTRAINT `FKbj0uoj9i40dory8w4t5ojyb9n` FOREIGN KEY (`checking_account_id`) REFERENCES `checking_account` (`id`),
   CONSTRAINT `FKihums7d3g5cv9ehminfs1539e` FOREIGN KEY (`savings_account_id`) REFERENCES `savings_account` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
