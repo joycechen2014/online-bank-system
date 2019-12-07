@@ -100,6 +100,35 @@ WEEK #4 (Dec2 - Dec6)
    - Integerate testing, System testing
 ```
 
-
-
-
+## Weekly Scrum Report - Junyan Wang
+```
+WEEK #1 (Nov11 - Nov15) 
+   - Had first meeting with teammates about the project and decided to use Spring Boot as the frame work.
+   - Did some investigation of Spring Boot.
+   - XP Core Value: Courage
+	- Everyone should have courage to share their own opinion and estimates.
+```
+```
+WEEK #2 (Nov18 - Nov22) 
+   - Followed the instruction to setup Spring Boot.
+   - Setup mysql database. 
+   - Discussed the issues during the setup process.
+   - XP Core Values: Communication
+	- A good communication will help team collaboration a lot, and it will also help us move fast.
+```
+```
+WEEK #3 (Nov25 - Nov29) 
+   - Used Zoom to talk about db schema.
+   - Discussed the deployment method.
+   - XP Core Values: Communication
+	- Communication with each other can help in trouble shooting and debugging.
+```
+```
+WEEK #4 (Dec2 - Dec6) 
+   - Finished deleting account API.
+   - Integrated testing with other team members.
+   - Deployed to aws.
+   - Gather all reports and stuff together.
+- XP Core Values: Communication
+	- Communication is the most important part doing integration test.
+```
