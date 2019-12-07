@@ -15,6 +15,7 @@ import java.security.Principal;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 /**
@@ -50,11 +51,11 @@ public class AccountServiceImpl implements AccountService {
     return primaryAccountDao.findByAccountNumber(primaryAccount.getAccountNumber());
   }
 
+  @Transactional
   public Boolean deletePrimaryAccount(Long id) {
     PrimaryAccount account = primaryAccountDao.findById(id);
     if (account != null) {
-      account.disable();
-      primaryAccountDao.save(account);
+      primaryAccountDao.deleteById(id);
       return true;
     }
     return false;
@@ -71,11 +72,11 @@ public class AccountServiceImpl implements AccountService {
     return savingsAccountDao.findByAccountNumber(savingsAccount.getAccountNumber());
   }
 
+  @Transactional
   public Boolean deleteSavingsAccount(Long id) {
     SavingsAccount account = savingsAccountDao.findById(id);
     if (account != null) {
-      account.disable();
-      savingsAccountDao.save(account);
+      savingsAccountDao.deleteById(id);
       return true;
     }
     return false;

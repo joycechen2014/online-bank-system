@@ -15,6 +15,8 @@ public interface PrimaryAccountDao extends CrudRepository<PrimaryAccount, Long> 
 
   PrimaryAccount findById(Long id);
 
+  void deleteById(Long id);
+
   @Query(value = "SELECT max(account_number) FROM primary_account", nativeQuery = true)
   int getMaxAccountNumber();
 }
