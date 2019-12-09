@@ -20,7 +20,13 @@ Online Banking system.
         
 
 ## Deploy 
-   - Deploy API to **AWS in an Auto Scaled EC2 Cluster** with Load Balancer
+## Deploy API to **AWS in an Auto Scaled EC2 Cluster** with Load Balancer
+* Guidance
+
+https://aws.amazon.com/blogs/devops/deploying-a-spring-boot-application-on-aws-using-aws-elastic-beanstalk/
+
+* Result
+    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/aws.png)
    
 ### Deploy API and Database to Docker Containers in AWS     
    
@@ -67,7 +73,8 @@ Online Banking system.
          - /data/online-banking
    
    docker-compose up 
-   ```   
+   ``` 
+  
 
  ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/UseCase%20Diagram0.png)
 
@@ -235,10 +242,4 @@ Online Banking system.
 	* http://localhost:8080/api/deleteCheckingAcc/{userId}/{accountId}
     * Method: Delete
 
-## Deploy to AWS
-* Guidance
 
-https://aws.amazon.com/blogs/devops/deploying-a-spring-boot-application-on-aws-using-aws-elastic-beanstalk/
-
-* Result
-    ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/aws.png)
