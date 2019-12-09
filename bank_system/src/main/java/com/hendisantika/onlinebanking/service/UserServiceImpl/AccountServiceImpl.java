@@ -11,8 +11,11 @@ import java.math.BigDecimal;
 import java.security.Principal;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
+=======
+>>>>>>> dev
 import org.springframework.stereotype.Service;
 
 /**
@@ -52,6 +55,10 @@ public class AccountServiceImpl implements AccountService {
   public Boolean deletePrimaryAccount(Long id) {
     CheckingAccount account = checkingAccountDao.findById(id);
     if (account != null) {
+<<<<<<< HEAD
+=======
+      account.disable();
+>>>>>>> dev
       checkingAccountDao.save(account);
       return true;
     }

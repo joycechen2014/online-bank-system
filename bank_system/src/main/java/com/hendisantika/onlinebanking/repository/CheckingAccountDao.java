@@ -15,8 +15,11 @@ public interface CheckingAccountDao extends CrudRepository<CheckingAccount, Long
 
   CheckingAccount findById(Long id);
 
+<<<<<<< HEAD:bank_system/src/main/java/com/hendisantika/onlinebanking/repository/CheckingAccountDao.java
   void deleteById(Long id);
 
+=======
+>>>>>>> dev:bank_system/src/main/java/com/hendisantika/onlinebanking/repository/CheckingAccountDao.java
   @Query(value = "SELECT max(account_number) FROM checking_account", nativeQuery = true)
   int getMaxAccountNumber();
 }
