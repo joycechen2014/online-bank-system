@@ -15,9 +15,56 @@ Online Banking system.
         - Set up recurring or one-time Bill payment for external payees
         - View and search Transactions - for credits/debits/checks/fees - up to  last 18 months
         - (Admin only) - Add transactions - such as manual refunds on fees
-        - Deploy API to **AWS in an Auto Scaled EC2 Cluster** with Load Balancer
-        - Web or mobile UI
-        
+
+## Deploy 
+   - Deploy API to **AWS in an Auto Scaled EC2 Cluster** with Load Balancer
+   
+### Deploy API and Database to Docker Containers in AWS     
+   
+   1. Create a online-banking app docker image: 
+   docker build -t online-banking-app .
+   
+   2. Create a online-banking db docker image:
+   ```
+   FROM mysql:5.7
+   Add a database
+   ENV MYSQL_DATABASE onlinebanking
+   COPY V1__20190307_Init_Tables_Data.sql /docker-entrypoint-initdb.d/
+   docker build -t online-banking-db .
+   ```
+   2. Push docker images to AWS ECR:
+   ```
+   docker tag online-banking-app:latest 120231263760.dkr.ecr.us-east-1.amazonaws.com/online-banking-app:latest
+   docker push 120231263760.dkr.ecr.us-east-1.amazonaws.com/online-banking-app:latest
+  
+   docker tag online-banking-db:latest 120231263760.dkr.ecr.us-east-1.amazonaws.com/online-banking-db:latest
+   docker push 120231263760.dkr.ecr.us-east-1.amazonaws.com/online-banking-db:latest
+   ```
+   3. Use docker compose to start up docker containers:
+   ```
+   version: '3'
+   
+   services:
+     mysql-docker-container:
+       image: 120231263760.dkr.ecr.us-east-1.amazonaws.com/online-banking-db
+       environment:
+         - MYSQL_ROOT_PASSWORD=welcome1
+         - MYSQL_DATABASE=onlinebanking
+         - MYSQL_USER=root
+         - MYSQL_PASSWORD=welcome1
+       volumes:
+         - /data/mysql
+     online-banking:
+       image: 120231263760.dkr.ecr.us-east-1.amazonaws.com/online-banking-app
+       depends_on:
+         - mysql-docker-container
+       ports:
+         - 8080:8080
+       volumes:
+         - /data/online-banking
+   
+   docker-compose up 
+   ```   
  ![image](https://github.com/gopinathsjsu/team-project-newteam/blob/master/img/UseCase%20Diagram0.png)
 
 
@@ -90,8 +137,8 @@ Online Banking system.
      * Params Example: transfer $10 from checking account to saving account one time
        ```json
        {
-		"transferFrom":"Primary",
-		"transferTo":"Savings",
+	    "transferFrom":"Primary",
+	    "transferTo":"Savings",
 		"amount":"10"
        }
        ``` 
